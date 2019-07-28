@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Git Guts`,
+    description: `Git Gits is an initiative meant to educate developers with every level of experience on the most popular version control system worldwide - git. Its purpose is to show git from practical perspective in the form of BYOD workshops and presentations with topics like: introduction to git, git repository structure (internal), hooks configuration, useful tooling and more.`,
+    author: `@Cloud Corridor`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
