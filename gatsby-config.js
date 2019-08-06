@@ -5,6 +5,12 @@ module.exports = {
     author: `@Cloud Corridor`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        includePaths: ["src/styles"],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -40,6 +46,22 @@ module.exports = {
       options: {
         id: "GTM-5CFC74P",
         includeInDevelopment: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Raleway`,
+          },
+          {
+            family: `Montserrat`,
+          },
+          {
+            family: `Droid Serif`,
+          },
+        ],
       },
     },
   ],

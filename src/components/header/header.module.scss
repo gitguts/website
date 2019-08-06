@@ -1,0 +1,29 @@
+.image-wrapper {
+  max-width: 120px;
+}
+
+.navigation-wrapper {}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: right;
+}
+
+.menu-item {
+  padding: 0 17px;
+  display: inline-block;
+
+  a {
+    color: #8b8b8b;
+    opacity: 1;
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 0 0 38px 0;
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+}

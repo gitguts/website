@@ -1,0 +1,76 @@
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+
+import styles from "./footer.module.scss"
+
+const Footer = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        placeholderImage: file(relativePath: { eq: "logo_small.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 300) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <footer className={styles.footerWrapper}>
+        <div className={`container ${styles.footerContainer}`}>
+          <div className="row">
+            <div className="col-md-3">
+              <h3 className={styles.sectionTitle}>O nas</h3>
+              <p>
+                Jesteśmy inicjatywą mającą na celu edukację programistów z
+                dowolnym doświadczeniem w zakresie najpopularniejszego na
+                świecie systemu kontroli wersji - git.
+              </p>
+            </div>
+            <div className="col-md-3">
+              <h3 className={styles.sectionTitle}>Strona</h3>
+              <ul className={styles.sectionList}>
+                <li>
+                  <a href="/">Wydarzenia</a>
+                </li>
+                <li>
+                  <a href="/">Warsztaty</a>
+                </li>
+                <li>
+                  <a href="/">Organizatorzy</a>
+                </li>
+                <li>
+                  <a href="/">Kontakt</a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-3">
+              <h3 className={styles.sectionTitle}>GDPR</h3>
+              <ul className={styles.sectionList}>
+                <li>
+                  <a href="/">Polityka Prywatności</a>
+                </li>
+                <li>
+                  <a href="/">Regulamin</a>
+                </li>
+                <li>
+                  <a href="/">Polityka Cookies</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className={styles.copyrightWrapper}>
+          <div className={`container ${styles.copyrightContainer}`}>
+            <div className="row">
+              <div className="col-md-6">© Wszystkie prawa zastrzeżone</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    )}
+  />
+)
+
+export default Footer
