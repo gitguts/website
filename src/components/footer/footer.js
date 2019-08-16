@@ -20,7 +20,7 @@ const Footer = () => (
       <footer className={styles.footerWrapper}>
         <div className={`container ${styles.footerContainer}`}>
           <div className="row">
-            <div className="col-md-3">
+            <div className={`col-md-3 ${styles.sectionWrapper}`}>
               <h3 className={styles.sectionTitle}>O nas</h3>
               <p>
                 Jesteśmy inicjatywą mającą na celu edukację programistów z
@@ -28,9 +28,12 @@ const Footer = () => (
                 świecie systemu kontroli wersji - git.
               </p>
             </div>
-            <div className="col-md-3">
+            <div className={`col-md-3 ${styles.sectionWrapper}`}>
               <h3 className={styles.sectionTitle}>Strona</h3>
               <ul className={styles.sectionList}>
+                <li>
+                  <a href="/">O Nas</a>
+                </li>
                 <li>
                   <a href="/">Wydarzenia</a>
                 </li>
@@ -45,7 +48,7 @@ const Footer = () => (
                 </li>
               </ul>
             </div>
-            <div className="col-md-3">
+            <div className={`col-md-3 ${styles.sectionWrapper}`}>
               <h3 className={styles.sectionTitle}>GDPR</h3>
               <ul className={styles.sectionList}>
                 <li>
@@ -61,10 +64,10 @@ const Footer = () => (
             </div>
           </div>
         </div>
-        <div className={styles.copyrightWrapper}>
-          <div className={`container ${styles.copyrightContainer}`}>
-            <div className="row">
-              <div className="col-md-6">© Wszystkie prawa zastrzeżone</div>
+        <div className={`container-fluid ${styles.copyrightContainer}`}>
+          <div className="row">
+            <div className={`col-md-12 ${styles.copyrightNote}`}>
+              © Wszystkie prawa zastrzeżone
             </div>
           </div>
         </div>

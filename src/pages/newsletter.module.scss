@@ -1,0 +1,34 @@
+.container {
+  background-color: #ddd;
+  font-size: 14px;
+  color: #333;
+  height: 100vh;
+  width: 100vw;
+}
+
+.inner-container {
+  background-color: #ddd;
+  margin-top: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.wrapper {
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  background-color: #fff;
+  margin: 40px auto;
+  width: 650px;
+  padding: 30px;
+}
+
+.link-wrapper {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .inner-container {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}

@@ -6,20 +6,19 @@
 .footer-container {
   padding-top: 60px;
   background-color: inherit;
-}
-
-.copyright-wrapper {
-  border-color: #161616;
-  color: #5b5b5b;
-  background-color: #161616;
-  border-top-width: 1px;
-  border-top-style: solid;
+  margin-top: 0;
 }
 
 .copyright-container {
-  padding: 25px 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
   margin-top: 0;
   background-color: #161616;
+  border-color: #161616;
+  color: #5b5b5b;
+  border-top-width: 1px;
+  border-top-style: solid;
+  text-align: center;
 }
 
 .section-title {
@@ -64,5 +63,20 @@
     a {
       color: #7f7f7f;
     }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer-container {
+    padding-top: 20px;
+    margin-top: 0;
+  }
+
+  .section-wrapper {
+    margin-top: 20px;
+  }
+
+  .copyright-note {
+    text-align: center;
   }
 }

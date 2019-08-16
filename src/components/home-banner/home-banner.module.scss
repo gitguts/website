@@ -1,0 +1,76 @@
+.container {
+  padding-right: 0;
+  padding-left: 0;
+  height: 600px;
+  max-height: 600px;
+  background-size: cover;
+  background-position-x: 0;
+  background-position-y: 55%;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+.container * {
+  background-color: transparent;
+}
+
+.name {
+  transform-origin: 50% 50%;
+  margin: 0;
+  padding: 0;
+  font-size: 81px;
+  font-weight: 500;
+  line-height: normal;
+  color: #ffffff;
+}
+
+.title {
+  transform-origin: 50% 50%;
+  margin: 0;
+  padding: 0;
+  font-size: 115px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  line-height: normal;
+  color: #ffffff;
+}
+
+.cities {
+  transform-origin: 50% 50%;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  line-height: normal;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: Raleway;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    height: 235px;
+    max-height: 235px;
+    padding-top: 75px;
+  }
+
+  .container * {
+    margin-top: 0;
+  }
+
+  .name {
+    transform-origin: 50% 50%;
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .cities {
+    font-size: 12px;
+  }
+}

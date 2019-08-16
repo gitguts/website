@@ -19,5 +19,13 @@ body {
 
 .container {
   background-color: #ffffff;
-  margin-top: 50px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+  }
 }

@@ -1,0 +1,74 @@
+.container {
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: -120px;
+  background-repeat: no-repeat;
+  height: 340px;
+  min-height: 340px;
+}
+
+.title {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 35px;
+  letter-spacing: 4px;
+  color: #212121;
+  line-height: 1.3;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.email {
+  padding: 18px 2%;
+  width: 360px;
+  margin-right: 10px;
+  font-size: 13px;
+  max-width: 96%;
+  display: inline-block;
+  color: #b5b5b5;
+}
+
+.submit {
+  color: #ffffff;
+  background-color: #f62b0a;
+  display: inline-block;
+  border: none;
+  border-color: #a72510;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  font-size: 13px;
+  padding: 17px 25px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.form-wrapper {
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    height: 300px;
+    min-height: 300px;
+    background-position: center 0;
+  }
+
+  .title {
+    padding-top: 30px;
+    margin-bottom: 15px;
+
+    h4 {
+      font-size: 20px;
+    }
+  }
+
+  .submit {
+    margin-top: 30px;
+  }
+}

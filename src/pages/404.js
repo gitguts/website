@@ -1,13 +1,28 @@
 import React from "react"
 
 import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
+
+import styles from "./404.module.scss"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className={`container ${styles.container}`}>
+      <div className="row">
+        <div className={`col-md-12 ${styles.notFoundIcon}`}>
+          <i className="fa fa-frown-o"></i>
+        </div>
+      </div>
+      <div className="row">
+        <div className={`col-md-12 ${styles.notFoundBlock}`}>
+          <p>Błąd 404</p>
+        </div>
+      </div>
+      <div className="row">
+        <div className={`col-md-12 ${styles.notFoundCaption}`}>
+          <p>Przepraszamy ale nie możemy odnaleźć wskazanej strony.</p>
+        </div>
+      </div>
+    </div>
   </Layout>
 )
 

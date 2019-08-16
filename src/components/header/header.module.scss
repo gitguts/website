@@ -1,3 +1,7 @@
+.container {
+  margin-bottom: 30px;
+}
+
 .image-wrapper {
   max-width: 120px;
 }
@@ -18,12 +22,61 @@
   a {
     color: #8b8b8b;
     opacity: 1;
-    font-size: 11px;
+    font-size: 16px;
     text-transform: uppercase;
     padding: 0 0 38px 0;
     margin: 0;
     font-weight: 800;
     letter-spacing: 2px;
     text-decoration: none;
+  }
+}
+
+.menu-icon {
+  display: none;
+  float: right;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid #d6d6d6;
+  color: #292929;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    background-color: #0a0a0a;
+    width: 300px;
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+    right: 30px
+  }
+
+  .menu.menu-active {
+    display: block;
+  }
+
+  .menu-item {
+    position: relative;
+    width: 100%;
+
+    a {
+      display: block;
+      position: relative;
+      padding: 15px 20px;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 300;
+      color: #fff;
+      outline: none;
+    }
   }
 }

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `config/dev.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Git Guts`,
@@ -62,6 +66,12 @@ module.exports = {
             family: `Droid Serif`,
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: process.env.MAILCHIMP_URL,
       },
     },
   ],
