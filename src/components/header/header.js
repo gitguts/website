@@ -67,7 +67,7 @@ export default class Header extends Component {
                         <a href="/">Organizatorzy</a>
                       </li>
                       <li className={styles.menuItem}>
-                        <a href="/">Kontakt</a>
+                        <a href="/contact">Kontakt</a>
                       </li>
                     </ul>
                   </nav>
