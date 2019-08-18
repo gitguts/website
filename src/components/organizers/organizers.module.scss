@@ -1,0 +1,32 @@
+.container {
+  margin-bottom: 50px;
+}
+
+.page-title {
+  margin-bottom: 50px;
+}
+
+.wrapper {
+  padding: 30px 30px 20px;
+  border-radius: 5px;
+  border-color: #dddddd;
+  background-color: #f5f5f5;
+  margin-bottom: 40px;
+}
+
+.content {
+  color: #9b9b9b;
+  margin-bottom: 20px;
+}
+
+.text {
+  margin: 0;
+}
+
+.image-wrapper {
+  margin: 0 auto;
+  width: 200px;
+  height: 120px;
+}
+
+@media screen and (max-width: 767px) {}

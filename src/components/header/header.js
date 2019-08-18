@@ -14,8 +14,6 @@ export default class Header extends Component {
   handleClick() {
     const showMenu = !this.state.showMenu
     this.setState({ showMenu: showMenu })
-
-    console.log(`Click: ${showMenu}`)
   }
 
   render() {
@@ -23,7 +21,7 @@ export default class Header extends Component {
       <StaticQuery
         query={graphql`
           query {
-            placeholderImage: file(relativePath: { eq: "logo_small.png" }) {
+            placeholderImage: file(relativePath: { eq: "logo.png" }) {
               childImageSharp {
                 fluid(maxWidth: 300) {
                   ...GatsbyImageSharpFluid
@@ -44,7 +42,7 @@ export default class Header extends Component {
                 <i
                   onClick={this.handleClick}
                   className={`fa fa-bars ${styles.menuIcon}`}
-                ></i>
+                />
               </div>
               <div className="col-md-9">
                 <div className={styles.navigationWrapper}>
@@ -64,7 +62,7 @@ export default class Header extends Component {
                         <a href="/">Warsztaty</a>
                       </li>
                       <li className={styles.menuItem}>
-                        <a href="/">Organizatorzy</a>
+                        <a href="/organizers">Organizatorzy</a>
                       </li>
                       <li className={styles.menuItem}>
                         <a href="/contact">Kontakt</a>
