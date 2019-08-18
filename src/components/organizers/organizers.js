@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { SocialIcon } from "react-social-icons"
 
 import styles from "./organizers.module.scss"
 
@@ -58,6 +59,38 @@ export default class Organizers extends Component {
                           konsultantów, szkoleniowców oraz DevOps.
                         </p>
                       </div>
+                      <div>
+                        <SocialIcon
+                          bgColor="black"
+                          style={{
+                            height: "2rem",
+                            width: "2rem",
+                            cursor: "pointer",
+                            marginRight: "0.5rem",
+                          }}
+                          url={`https://www.cloudcorridor.com`}
+                        />
+                        <SocialIcon
+                          bgColor="black"
+                          style={{
+                            height: "2rem",
+                            width: "2rem",
+                            cursor: "pointer",
+                            marginRight: "0.5rem",
+                          }}
+                          url={`https://www.facebook.com/cloudcorridorcom`}
+                        />
+                        <SocialIcon
+                          bgColor="black"
+                          style={{
+                            height: "2rem",
+                            width: "2rem",
+                            cursor: "pointer",
+                            marginRight: "0.5rem",
+                          }}
+                          url={`https://www.linkedin.com/company/cloudcorridor`}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -83,6 +116,48 @@ export default class Organizers extends Component {
                           absolwentów, którzy znaleźli pracę, utrzymuje się na
                           rynku IT.
                         </p>
+                      </div>
+                      <div>
+                        <SocialIcon
+                          bgColor="black"
+                          style={{
+                            height: "2rem",
+                            width: "2rem",
+                            cursor: "pointer",
+                            marginRight: "0.5rem",
+                          }}
+                          url={`https://infoshareacademy.com`}
+                        />
+                        <SocialIcon
+                          bgColor="black"
+                          style={{
+                            height: "2rem",
+                            width: "2rem",
+                            cursor: "pointer",
+                            marginRight: "0.5rem",
+                          }}
+                          url={`https://www.facebook.com/infoshareacademy`}
+                        />
+                        <SocialIcon
+                          bgColor="black"
+                          style={{
+                            height: "2rem",
+                            width: "2rem",
+                            cursor: "pointer",
+                            marginRight: "0.5rem",
+                          }}
+                          url={`https://www.instagram.com/infoshareacademy`}
+                        />
+                        <SocialIcon
+                          bgColor="black"
+                          style={{
+                            height: "2rem",
+                            width: "2rem",
+                            cursor: "pointer",
+                            marginRight: "0.5rem",
+                          }}
+                          url={`https://www.linkedin.com/company/infoshare-academy`}
+                        />
                       </div>
                     </div>
                   </div>
