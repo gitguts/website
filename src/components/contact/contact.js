@@ -6,7 +6,7 @@ export default class Contact extends Component {
   render() {
     return (
       <>
-        <form name="contact" method="POST" data-netlify="true">
+        <form name="contact" method="POST" netlify-honeypot="bot-field" netlify>
           <div className={`container ${styles.container}`}>
             <div className={`row`}>
               <div className={`col-lg-6 offset-lg-3 col-sm-12`}>
@@ -52,7 +52,7 @@ export default class Contact extends Component {
                 <div className={styles.element}>
                   <div className={styles.wrapper}>
                     <textarea
-                      name="email"
+                      name="message"
                       className={styles.input}
                       aria-required="true"
                       aria-invalid="false"
@@ -65,7 +65,9 @@ export default class Contact extends Component {
                 </div>
                 <div className={styles.element}>
                   <div className={styles.wrapper}>
-                    <button className={styles.submit}>Wyślij</button>
+                    <button type="submit" className={styles.submit}>
+                      Wyślij
+                    </button>
                   </div>
                 </div>
               </div>
