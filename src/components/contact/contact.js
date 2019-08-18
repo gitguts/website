@@ -6,7 +6,13 @@ export default class Contact extends Component {
   render() {
     return (
       <>
-        <form name="contact" method="POST" netlify-honeypot="bot-field" netlify>
+        <form
+          name="contact"
+          method="POST"
+          netlify
+          netlify-honeypot="bot-field"
+          encType="application/x-www-form-urlencoded"
+        >
           <div className={`container ${styles.container}`}>
             <div className={`row`}>
               <div className={`col-lg-6 offset-lg-3 col-sm-12`}>
@@ -19,6 +25,7 @@ export default class Contact extends Component {
                   <label>
                     Don’t fill this out if you're human:{" "}
                     <input name="bot-field" />
+                    <input type="hidden" name="form-name" value="contact" />
                   </label>
                 </span>
                 <div className={styles.element}>
