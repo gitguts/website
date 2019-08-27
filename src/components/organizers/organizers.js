@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import { SocialIcon } from "react-social-icons"
 
 import styles from "./organizers.module.scss"
+import NameBanner from "../name-banner/name-banner"
 
 export default class Organizers extends Component {
   render() {
@@ -32,12 +33,9 @@ export default class Organizers extends Component {
         render={data => {
           return (
             <>
+              <NameBanner name={`Organizatorzy`} />
+
               <div className={`container ${styles.container}`}>
-                <div className={`row`}>
-                  <div className={`col-md-12`}>
-                    <h3 className={styles.pageTitle}>Organizatorzy</h3>
-                  </div>
-                </div>
                 <div className={`row`}>
                   <div className={`col-md-12`}>
                     <div className={styles.wrapper}>

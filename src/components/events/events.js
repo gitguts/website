@@ -1,12 +1,14 @@
 import React, { Component } from "react"
 import { graphql, StaticQuery } from "gatsby"
+import { SocialIcon } from "react-social-icons"
 
 import styles from "./events.module.scss"
+import NameBanner from "../name-banner/name-banner"
 
 const parseEventDay = event => {
   const date = new Date(Date.parse(event.startTime))
 
-  return date.toLocaleDateString("pl-PL", {
+  return date.toLocaleDateString("en-US", {
     year: "numeric",
     day: "numeric",
     month: "long",
@@ -17,20 +19,23 @@ const parseCMSDate = value => {
   const dateStr = `${value.substring(0, value.length - 1)}`
   const dateParts = dateStr.split("T")
 
-  return new Date(Date.parse(`${dateParts[0]} ${dateParts[1]} GMT+0200`))
+  return new Date(Date.parse(`${dateParts[0]} ${dateParts[1]}`))
 }
 
 const parseEventTime = event => {
   const startDate = parseCMSDate(event.startTime)
   const endDate = parseCMSDate(event.endTime)
 
-  const startTime = startDate.toLocaleTimeString("pl-PL", {
+  startDate.setHours(startDate.getHours() + 2)
+  endDate.setHours(endDate.getHours() + 2)
+
+  const startTime = startDate.toLocaleTimeString("en-US", {
     hourCycle: "h24",
     hour: "numeric",
     minute: "numeric",
   })
 
-  const endTime = endDate.toLocaleTimeString("pl-PL", {
+  const endTime = endDate.toLocaleTimeString("en-US", {
     hourCycle: "h24",
     hour: "numeric",
     minute: "numeric",
@@ -83,38 +88,11 @@ export default class Events extends Component {
         `}
         render={data => (
           <>
-            <div
-              className={`container-fluid ${styles.bannerContainer}`}
-              style={{
-                backgroundImage: `url(${data.placeholderImage.childImageSharp.fluid.src})`,
-              }}
-            >
-              <div className={`container`}>
-                <div className={`row`}>
-                  <div className={`col-md-12 ${styles.name}`}>Wydarzenia</div>
-                </div>
-              </div>
-            </div>
+            <NameBanner name={`Wydarzenia`} />
+
             <div className={`container ${styles.container}`}>
               {data.graphCMSData.events.map(event => (
                 <>
-                  <div className={`row ${styles.wrapperRow}`}>
-                    <div className={`col-sm-12 col-md-3 ${styles.date}`}>
-                      <div className={styles.dateInner}>
-                        {parseEventDay(event)}
-                      </div>
-                      <div className={styles.dateInner}>
-                        {parseEventTime(event)}
-                      </div>
-                    </div>
-                    <div className={`col-sm-12 col-md-9 ${styles.address}`}>
-                      <div>{event.address.name}</div>
-                      <div>
-                        {event.address.street} {event.address.zipCode},{" "}
-                        {event.address.city}
-                      </div>
-                    </div>
-                  </div>
                   <div className={`row ${styles.contentRow}`}>
                     <div className={`col-12`}>
                       <h3 className={`${styles.title}`}>
@@ -123,12 +101,32 @@ export default class Events extends Component {
                         </a>
                       </h3>
                     </div>
-                    <div className={`col-12`}>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: event.workshop.description.html,
+                    <div className={`col-12 ${styles.eventInfo}`}>
+                      <i className={`fa fa-clock-o ${styles.icon}`}></i>
+                      {parseEventDay(event)} {parseEventTime(event)}
+                    </div>
+                    <div className={`col-12 ${styles.eventInfo}`}>
+                      <i className={`fa fa-location-arrow ${styles.icon}`}></i>
+                      {event.address.street} {event.address.zipCode},{" "}
+                      {event.address.city}
+                    </div>
+                    <div className={`col-12 ${styles.eventInfo}`}>
+                      <i className={`fa fa-user ${styles.icon}`}></i>
+                      {event.participants}
+                    </div>
+                    <div className={`col-12 ${styles.eventInfo}`}>
+                      {/*<i className={`fa fa-hashtag ${styles.icon}`}></i>*/}
+                      {/*<a href={event.facebook}>Facebook</a>*/}
+                      <SocialIcon
+                        bgColor="black"
+                        style={{
+                          height: "1.5rem",
+                          width: "1.5rem",
+                          cursor: "pointer",
+                          marginRight: "0.5rem",
                         }}
-                      ></div>
+                        url={event.facebook}
+                      />
                     </div>
                   </div>
                 </>

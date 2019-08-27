@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import styles from "./contact.module.scss"
+import NameBanner from "../name-banner/name-banner"
 
 export default class Contact extends Component {
   render() {
@@ -13,12 +14,9 @@ export default class Contact extends Component {
           netlify-honeypot="bot-field"
           encType="application/x-www-form-urlencoded"
         >
+          <NameBanner name={`Kontakt`} />
+
           <div className={`container ${styles.container}`}>
-            <div className={`row`}>
-              <div className={`col-lg-6 offset-lg-3 col-sm-12`}>
-                <h5 className={styles.header}>Formularz kontaktowy</h5>
-              </div>
-            </div>
             <div className={`row`}>
               <div className={`col-lg-6 offset-lg-3 col-sm-12`}>
                 <span className={styles.hidden}>
