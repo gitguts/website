@@ -21,7 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.graphCMSData.workshops.forEach(workshop => {
       createPage({
         path: `workshops/${workshop.slug}`,
-        component: path.resolve(`./src/pages/workshop.js`),
+        component: path.resolve(`./src/dynamic/workshop.js`),
         context: {
           workshop: workshop,
         },
