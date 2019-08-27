@@ -18,17 +18,14 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    // console.log(result.data.graphCMSData.workshops.length)
     result.data.graphCMSData.workshops.forEach(workshop => {
       createPage({
         path: `workshops/${workshop.slug}`,
         component: path.resolve(`./src/pages/workshop.js`),
         context: {
-          workshop,
+          workshop: workshop,
         },
       })
-
-      // console.log(workshop.slug)
     })
   })
 }

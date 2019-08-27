@@ -21,7 +21,7 @@ class Workshop extends Component {
                 dangerouslySetInnerHTML={{
                   __html: this.props.workshop.description.html,
                 }}
-              ></div>
+              />
             </div>
             <div className={`col-12 ${styles.resources}`}>
               <span>Zasoby:</span>
