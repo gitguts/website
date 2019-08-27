@@ -1,0 +1,47 @@
+.container {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.content-row {
+  padding: 40px 30px 20px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 25px;
+  color: #515151;
+}
+
+.resources {
+  font-size: large;
+
+  span {
+    line-height: 24px;
+    color: #7f7f7f;
+    margin-right: 10px;
+  }
+
+  a {
+    -webkit-transition: all .3s linear 0s;
+    transition: all .3s linear 0s;
+    outline: none;
+    color: #6a6a6a;
+    background-color: transparent;
+  }
+
+  a + a {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .content-row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -92,44 +92,42 @@ export default class Events extends Component {
 
             <div className={`container ${styles.container}`}>
               {data.graphCMSData.events.map(event => (
-                <>
-                  <div className={`row ${styles.contentRow}`}>
-                    <div className={`col-12`}>
-                      <h3 className={`${styles.title}`}>
-                        <a href={`/workshops/${event.workshop.slug}`}>
-                          {event.workshop.name}
-                        </a>
-                      </h3>
-                    </div>
-                    <div className={`col-12 ${styles.eventInfo}`}>
-                      <i className={`fa fa-clock-o ${styles.icon}`}></i>
-                      {parseEventDay(event)} {parseEventTime(event)}
-                    </div>
-                    <div className={`col-12 ${styles.eventInfo}`}>
-                      <i className={`fa fa-location-arrow ${styles.icon}`}></i>
-                      {event.address.street} {event.address.zipCode},{" "}
-                      {event.address.city}
-                    </div>
-                    <div className={`col-12 ${styles.eventInfo}`}>
-                      <i className={`fa fa-user ${styles.icon}`}></i>
-                      {event.participants}
-                    </div>
-                    <div className={`col-12 ${styles.eventInfo}`}>
-                      {/*<i className={`fa fa-hashtag ${styles.icon}`}></i>*/}
-                      {/*<a href={event.facebook}>Facebook</a>*/}
-                      <SocialIcon
-                        bgColor="black"
-                        style={{
-                          height: "1.5rem",
-                          width: "1.5rem",
-                          cursor: "pointer",
-                          marginRight: "0.5rem",
-                        }}
-                        url={event.facebook}
-                      />
-                    </div>
+                <div className={`row ${styles.contentRow}`} key={event.id}>
+                  <div className={`col-12`}>
+                    <h3 className={`${styles.title}`}>
+                      <a href={`/workshops/${event.workshop.slug}`}>
+                        {event.workshop.name}
+                      </a>
+                    </h3>
                   </div>
-                </>
+                  <div className={`col-12 ${styles.eventInfo}`}>
+                    <i className={`fa fa-clock-o ${styles.icon}`}></i>
+                    {parseEventDay(event)} {parseEventTime(event)}
+                  </div>
+                  <div className={`col-12 ${styles.eventInfo}`}>
+                    <i className={`fa fa-location-arrow ${styles.icon}`}></i>
+                    {event.address.street} {event.address.zipCode},{" "}
+                    {event.address.city}
+                  </div>
+                  <div className={`col-12 ${styles.eventInfo}`}>
+                    <i className={`fa fa-user ${styles.icon}`}></i>
+                    {event.participants}
+                  </div>
+                  <div className={`col-12 ${styles.eventInfo}`}>
+                    {/*<i className={`fa fa-hashtag ${styles.icon}`}></i>*/}
+                    {/*<a href={event.facebook}>Facebook</a>*/}
+                    <SocialIcon
+                      bgColor="black"
+                      style={{
+                        height: "1.5rem",
+                        width: "1.5rem",
+                        cursor: "pointer",
+                        marginRight: "0.5rem",
+                      }}
+                      url={event.facebook}
+                    />
+                  </div>
+                </div>
               ))}
             </div>
           </>
