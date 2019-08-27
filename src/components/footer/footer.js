@@ -35,10 +35,10 @@ const Footer = () => (
                   <a href="/">O Nas</a>
                 </li>
                 <li>
-                  <a href="/">Wydarzenia</a>
+                  <a href="/events">Wydarzenia</a>
                 </li>
                 <li>
-                  <a href="/">Warsztaty</a>
+                  <a href="/workshops">Warsztaty</a>
                 </li>
                 <li>
                   <a href="/organizers">Organizatorzy</a>
@@ -52,13 +52,13 @@ const Footer = () => (
               <h3 className={styles.sectionTitle}>GDPR</h3>
               <ul className={styles.sectionList}>
                 <li>
-                  <a href="/">Polityka Prywatności</a>
+                  <a href="/privacy-policy">Polityka Prywatności</a>
                 </li>
                 <li>
-                  <a href="/">Regulamin</a>
+                  <a href="/terms-of-service">Regulamin</a>
                 </li>
                 <li>
-                  <a href="/">Polityka Cookies</a>
+                  <a href="/cookies">Polityka Cookies</a>
                 </li>
               </ul>
             </div>
