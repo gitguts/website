@@ -31,7 +31,7 @@ export default class HomeInfo extends Component {
                   <h3 className={`${styles.title}`}>Co robimy?</h3>
                   <p>
                     Uczymy programistów efektywnie korzystać z systemu kontroli
-                    git oraz poprawnie organizować proces wytwarzania
+                    wersji git oraz poprawnie organizować proces wytwarzania
                     oprogramowania z jego użyciem.
                   </p>
                 </div>
