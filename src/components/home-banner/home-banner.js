@@ -71,9 +71,25 @@ export default class HomeBanner extends Component {
               <div
                 className={`container-fluid ${styles.container}`}
                 style={{
-                  backgroundImage: `url(${data.placeholderImage.childImageSharp.fluid.src})`,
+                  position: `relative`,
+                  backgroundColor: `black`,
                 }}
               >
+                <div
+                  style={{
+                    position: `absolute`,
+                    top: 0,
+                    right: 0,
+                    bottom: 0,
+                    left: 0,
+                    opacity: 0.7,
+                    backgroundSize: `cover`,
+                    backgroundPositionX: 0,
+                    backgroundPositionY: `55%`,
+                    backgroundRepeat: `no-repeat`,
+                    backgroundImage: `url(${data.placeholderImage.childImageSharp.fluid.src})`,
+                  }}
+                />
                 <div className={`container`}>
                   <div className={`row`}>
                     <div className={`col-md-12 ${styles.name}`}>
