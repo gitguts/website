@@ -58,7 +58,7 @@ module.exports = {
         fonts: [
           {
             family: `Arbutus Slab`,
-            subsets: [`latin`],
+            subsets: [`latin`, `latin-ext`],
           },
         ],
       },
