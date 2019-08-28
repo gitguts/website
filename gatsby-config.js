@@ -57,13 +57,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Raleway`,
-          },
-          {
-            family: `Montserrat`,
-          },
-          {
-            family: `Droid Serif`,
+            family: `Arbutus Slab`,
+            subsets: [`latin`],
           },
         ],
       },

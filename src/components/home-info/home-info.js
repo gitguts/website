@@ -16,8 +16,8 @@ export default class HomeInfo extends Component {
                 <div className={`col-10`}>
                   <h3 className={`${styles.title}`}>Kim jesteśmy?</h3>
                   <p>
-                    Donec id elit non mi porta gravida at eget me tus. Sed
-                    posuere consectetur estat lobo rtis. Cum sociis natoque.
+                    Entuzjastami i ewangelistami dobrych praktyk zakochanymi w
+                    systemie kontroli wersji git.
                   </p>
                 </div>
               </div>
@@ -30,8 +30,9 @@ export default class HomeInfo extends Component {
                 <div className={`col-10`}>
                   <h3 className={`${styles.title}`}>Co robimy?</h3>
                   <p>
-                    Donec id elit non mi porta gravida at eget me tus. Sed
-                    posuere consectetur estat lobo rtis. Cum sociis natoque.
+                    Uczymy programistów efektywnie korzystać z systemu kontroli
+                    git oraz poprawnie organizować proces wytwarzania
+                    oprogramowania z jego użyciem.
                   </p>
                 </div>
               </div>
@@ -44,8 +45,8 @@ export default class HomeInfo extends Component {
                 <div className={`col-10`}>
                   <h3 className={`${styles.title}`}>Czemu to robimy?</h3>
                   <p>
-                    Donec id elit non mi porta gravida at eget me tus. Sed
-                    posuere consectetur estat lobo rtis. Cum sociis natoque.
+                    Ponieważ zarówno dzielenie się wiedzą jak i sam git jest
+                    super :)
                   </p>
                 </div>
               </div>
