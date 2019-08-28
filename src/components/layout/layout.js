@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import Header from "../header/header"
 import Footer from "../footer/footer"
 
-import image from "../../images/logo.png"
+import image from "../../images/logo_full.png"
 import styles from "./layout.module.scss"
 
 const Layout = ({ children }) => (
