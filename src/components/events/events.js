@@ -101,21 +101,19 @@ export default class Events extends Component {
                     </h3>
                   </div>
                   <div className={`col-12 ${styles.eventInfo}`}>
-                    <i className={`fa fa-clock-o ${styles.icon}`}></i>
+                    <i className={`fa fa-clock-o ${styles.icon}`} />
                     {parseEventDay(event)} {parseEventTime(event)}
                   </div>
                   <div className={`col-12 ${styles.eventInfo}`}>
-                    <i className={`fa fa-location-arrow ${styles.icon}`}></i>
+                    <i className={`fa fa-location-arrow ${styles.icon}`} />
                     {event.address.street} {event.address.zipCode},{" "}
                     {event.address.city}
                   </div>
                   <div className={`col-12 ${styles.eventInfo}`}>
-                    <i className={`fa fa-user ${styles.icon}`}></i>
+                    <i className={`fa fa-user ${styles.icon}`} />
                     {event.participants}
                   </div>
                   <div className={`col-12 ${styles.eventInfo}`}>
-                    {/*<i className={`fa fa-hashtag ${styles.icon}`}></i>*/}
-                    {/*<a href={event.facebook}>Facebook</a>*/}
                     <SocialIcon
                       bgColor="black"
                       style={{

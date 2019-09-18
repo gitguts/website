@@ -49,7 +49,7 @@ const Footer = () => (
               </ul>
             </div>
             <div className={`col-md-3 ${styles.sectionWrapper}`}>
-              <h3 className={styles.sectionTitle}>GDPR</h3>
+              <h3 className={styles.sectionTitle}>Dokumenty</h3>
               <ul className={styles.sectionList}>
                 <li>
                   <a href="/privacy-policy">Polityka Prywatności</a>
