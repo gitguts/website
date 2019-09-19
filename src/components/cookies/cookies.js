@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import styles from "./cookies.module.scss"
+import styles from "../shared/legal.module.scss"
 import NameBanner from "../name-banner/name-banner"
 
 export default class Cookies extends Component {
@@ -9,7 +9,7 @@ export default class Cookies extends Component {
       <>
         <NameBanner name={`Polityka Cookie`} />
 
-        <div className={`container ${styles.container}`}>
+        <div className={`container ${styles.contentContainer}`}>
           <div className={`row ${styles.contentRow}`}>
             <div className={`col-12`}>
               <h3 className={`${styles.title}`}>Polityka Cookies</h3>
