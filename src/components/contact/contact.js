@@ -72,10 +72,20 @@ function Contact() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
         <NameBanner name={`Kontakt`} />
 
         <div className={`container ${styles.container}`}>
+          <span className={styles.hidden}>
+            <label>
+              Don’t fill this out if you're human: <input name="bot-field" />
+              <input type="hidden" name="form-name" value="contact" />
+            </label>
+          </span>
           <div className={`row`}>
             <div className={`col-lg-6 offset-lg-3 col-sm-12`}>
               {(status === FormSubmissionResult.SUCCESS ||
