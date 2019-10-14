@@ -33,7 +33,10 @@ function Contact() {
 
     fetch("/", {
       method: "POST",
-      body: encode(data),
+      body: encode({
+        "form-name": "contact",
+        ...data,
+      }),
     })
       .then(() => {
         setStatus(FormSubmissionResult.SUCCESS)
@@ -73,6 +76,8 @@ function Contact() {
   return (
     <>
       <form
+        name="contact"
+        method="post"
         onSubmit={handleSubmit}
         data-netlify="true"
         data-netlify-honeypot="bot-field"
