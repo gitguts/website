@@ -1,7 +1,3 @@
-.hidden {
-  display: none;
-}
-
 .element {
   margin-bottom: 20px;
   border-color: #dddddd;
@@ -39,6 +35,18 @@
 
 .header {
   color: #454545;
+}
+
+.message {
+  text-align: center;
+}
+
+.success {
+  color: forestgreen;
+}
+
+.error {
+  color: red;
 }
 
 @media screen and (max-width: 767px) {
