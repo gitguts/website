@@ -109,21 +109,37 @@ export default class Events extends Component {
                     {event.address.street} {event.address.zipCode},{" "}
                     {event.address.city}
                   </div>
+                  {event.participants && event.participants > 0 && (
+                    <div className={`col-12 ${styles.eventInfo}`}>
+                      <i className={`fa fa-user ${styles.icon}`} />
+                      {event.participants}
+                    </div>
+                  )}
                   <div className={`col-12 ${styles.eventInfo}`}>
-                    <i className={`fa fa-user ${styles.icon}`} />
-                    {event.participants}
-                  </div>
-                  <div className={`col-12 ${styles.eventInfo}`}>
-                    <SocialIcon
-                      bgColor="black"
-                      style={{
-                        height: "1.5rem",
-                        width: "1.5rem",
-                        cursor: "pointer",
-                        marginRight: "0.5rem",
-                      }}
-                      url={event.facebook}
-                    />
+                    {event.facebook && (
+                      <SocialIcon
+                        bgColor="black"
+                        style={{
+                          height: "1.5rem",
+                          width: "1.5rem",
+                          cursor: "pointer",
+                          marginRight: "0.5rem",
+                        }}
+                        url={event.facebook}
+                      />
+                    )}
+                    {event.evenea && (
+                      <SocialIcon
+                        bgColor="black"
+                        style={{
+                          height: "1.5rem",
+                          width: "1.5rem",
+                          cursor: "pointer",
+                          marginRight: "0.5rem",
+                        }}
+                        url={event.evenea}
+                      />
+                    )}
                   </div>
                 </div>
               ))}
