@@ -19,7 +19,7 @@ class Workshop extends Component {
             <div className={`col-12`}>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: this.props.workshop.description.html,
+                  __html: `<div>${this.props.workshop.description.html}</div>`,
                 }}
               />
             </div>
