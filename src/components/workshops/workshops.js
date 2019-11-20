@@ -42,7 +42,7 @@ export default class Events extends Component {
                         </h3>
                       </div>
                       <div className={styles.content}>
-                        <p
+                        <div
                           className={styles.text}
                           dangerouslySetInnerHTML={{
                             __html: `<div>${workshop.description.html}</div>`,
