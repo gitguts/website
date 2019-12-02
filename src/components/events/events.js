@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { SocialIcon } from "react-social-icons"
+import * as moment from "moment"
 
 import styles from "./events.module.scss"
 import NameBanner from "../name-banner/name-banner"
@@ -15,19 +16,9 @@ const parseEventDay = event => {
   })
 }
 
-const parseCMSDate = value => {
-  const dateStr = `${value.substring(0, value.length - 1)}`
-  const dateParts = dateStr.split("T")
-
-  return new Date(Date.parse(`${dateParts[0]} ${dateParts[1]}`))
-}
-
 const parseEventTime = event => {
-  const startDate = parseCMSDate(event.startTime)
-  const endDate = parseCMSDate(event.endTime)
-
-  startDate.setHours(startDate.getHours() + 2)
-  endDate.setHours(endDate.getHours() + 2)
+  const startDate = moment(event.startTime).toDate()
+  const endDate = moment(event.endTime).toDate()
 
   const startTime = startDate.toLocaleTimeString("en-US", {
     hourCycle: "h24",
