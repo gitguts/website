@@ -35,6 +35,14 @@ const parseEventTime = event => {
   return `${startTime} - ${endTime}`
 }
 
+const parseEventAddress = event => {
+  if (!event.address.street) {
+    return `Webinar`
+  }
+
+  return `${event.address.street} ${event.address.zipCode}, ${event.address.city}`
+}
+
 export default class Events extends Component {
   render() {
     return (
@@ -97,8 +105,7 @@ export default class Events extends Component {
                   </div>
                   <div className={`col-12 ${styles.eventInfo}`}>
                     <i className={`fa fa-location-arrow ${styles.icon}`} />
-                    {event.address.street} {event.address.zipCode},{" "}
-                    {event.address.city}
+                    {parseEventAddress(event)}
                   </div>
                   {event.participants && event.participants > 0 && (
                     <div className={`col-12 ${styles.eventInfo}`}>
