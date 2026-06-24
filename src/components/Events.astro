@@ -1,0 +1,74 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  events: CollectionEntry<"events">[];
+  workshopName: Record<string, string>;
+}
+
+const { events, workshopName } = Astro.props;
+
+const sorted = [...events].sort(
+  (a, b) => b.data.startTime.getTime() - a.data.startTime.getTime()
+);
+
+const dayFmt = new Intl.DateTimeFormat("pl-PL", { day: "numeric", timeZone: "UTC" });
+const monFmt = new Intl.DateTimeFormat("pl-PL", { month: "short", timeZone: "UTC" });
+const timeFmt = new Intl.DateTimeFormat("pl-PL", {
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+  timeZone: "UTC",
+});
+
+type Address = CollectionEntry<"events">["data"]["address"];
+function place(a: Address): string {
+  if (!a.street) return a.name || "Webinar";
+  const line2 = [a.zipCode, a.city].filter(Boolean).join(" ");
+  return [a.street, line2].filter(Boolean).join(", ");
+}
+---
+
+<section class="commit" id="wydarzenia">
+  <div class="commit__rail"><span class="commit__node"></span></div>
+  <div class="commit__body">
+    <span class="eyebrow mono">git log --oneline <span class="sha">· wydarzenia</span></span>
+    <h2 class="title">Cztery lata warsztatów na żywo.</h2>
+    <p class="lead">
+      Warsztaty, które poprowadziliśmy w miastach w całej Polsce — i online.
+    </p>
+    <div class="events">
+      {
+        sorted.map((e) => {
+          const d = e.data;
+          return (
+            <article class="ecard">
+              <div class="ecard__date">
+                <b>{dayFmt.format(d.startTime)}</b>
+                {monFmt.format(d.startTime).replace(".", "")} {d.startTime.getUTCFullYear()}
+              </div>
+              <div class="ecard__main">
+                <h3>{workshopName[d.workshop.id] ?? "Warsztat git"}</h3>
+                <div class="ecard__meta">
+                  <span class="mono">
+                    {timeFmt.format(d.startTime)}–{timeFmt.format(d.endTime)}
+                  </span>
+                  <span>{place(d.address)}</span>
+                  {d.participants ? <span>{d.participants} uczestników</span> : null}
+                </div>
+              </div>
+              <div class="ecard__links">
+                {d.facebook && (
+                  <a href={d.facebook} target="_blank" rel="noopener">facebook</a>
+                )}
+                {d.evenea && (
+                  <a href={d.evenea} target="_blank" rel="noopener">evenea</a>
+                )}
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

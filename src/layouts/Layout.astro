@@ -1,60 +1,123 @@
 ---
+import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
 }
 
-const { title, description } = Astro.props;
+const {
+  title = "Git Guts — bezpłatne warsztaty z gita",
+  description = "Bezpłatne warsztaty, które uczą nie tylko jak używać gita, ale też jak działa w środku.",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="pl">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    {description && <meta name="description" content={description} />}
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#663399" />
+    <script is:inline>document.documentElement.className = "js";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
   </head>
   <body>
-    <main class="container">
+    <Nav />
+    <main class="wrap" id="top">
       <slot />
     </main>
+    <Footer />
 
-    <style is:global>
-      :root {
-        color-scheme: light dark;
-      }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family:
-          system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          sans-serif;
-        line-height: 1.6;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
-    <style>
-      /* Mobile-first: full-width with comfortable gutters, capped on larger screens. */
-      .container {
-        width: 100%;
-        max-width: 1080px;
-        margin-inline: auto;
-        padding: 1rem;
-      }
-    </style>
+    <script is:inline>
+      (function () {
+        // mobile menu
+        var burger = document.getElementById("burger"),
+          menu = document.getElementById("menu");
+        if (burger && menu) {
+          burger.addEventListener("click", function () {
+            var open = menu.classList.toggle("open");
+            burger.setAttribute("aria-expanded", open);
+          });
+          menu.querySelectorAll("a").forEach(function (a) {
+            a.addEventListener("click", function () {
+              menu.classList.remove("open");
+              burger.setAttribute("aria-expanded", "false");
+            });
+          });
+        }
+
+        // commit spine reveal
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!reduce && "IntersectionObserver" in window) {
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("in");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+          );
+          document.querySelectorAll(".commit:not(#hero)").forEach(function (s) {
+            io.observe(s);
+          });
+        } else {
+          document.querySelectorAll(".commit").forEach(function (s) {
+            s.classList.add("in");
+          });
+        }
+
+        // hero graph draw-in
+        var graph = document.getElementById("graph");
+        if (graph) {
+          window.addEventListener("load", function () {
+            if (reduce) {
+              graph.classList.add("loaded");
+              return;
+            }
+            requestAnimationFrame(function () {
+              setTimeout(function () {
+                graph.classList.add("loaded");
+              }, 180);
+            });
+          });
+        }
+
+        // newsletter (client-side only — real wiring is the contact/forms task)
+        var sub = document.getElementById("subscribe"),
+          email = document.getElementById("email"),
+          ok = document.getElementById("ok");
+        if (sub && email) {
+          var subscribe = function () {
+            var valid = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim());
+            if (!valid) {
+              email.focus();
+              email.style.borderColor = "#F0502E";
+              return;
+            }
+            email.style.borderColor = "";
+            if (ok) ok.classList.add("show");
+            email.value = "";
+            email.placeholder = "zapisano ✓";
+          };
+          sub.addEventListener("click", subscribe);
+          email.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") subscribe();
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

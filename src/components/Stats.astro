@@ -1,0 +1,31 @@
+---
+interface Props {
+  participants: number;
+  cities: string[];
+}
+
+const { participants, cities } = Astro.props;
+
+// Polish plural for "miasto" (1 miasto / 2–4 miasta / 5+ miast)
+function cityWord(n: number): string {
+  if (n === 1) return "miasto";
+  const t = n % 10;
+  const h = n % 100;
+  return t >= 2 && t <= 4 && (h < 10 || h >= 20) ? "miasta" : "miast";
+}
+---
+
+<section class="commit" id="stats">
+  <div class="commit__rail"><span class="commit__node"></span></div>
+  <div class="commit__body">
+    <span class="eyebrow mono">git log --stat <span class="sha">· 4 lata społeczności</span></span>
+    <div class="stats">
+      <div class="stat"><b>{participants}</b><span>uczestników na warsztatach</span></div>
+      <div class="stat"><b>{cities.length}</b><span>{cityWord(cities.length)} w Polsce</span></div>
+      <div class="stat"><b>100%</b><span>za darmo, dla każdego poziomu</span></div>
+    </div>
+    <div class="cities">
+      {cities.map((c) => <span class="chip">{c}</span>)}
+    </div>
+  </div>
+</section>
