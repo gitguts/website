@@ -1,0 +1,10 @@
+# Netlify build config for the gitguts Astro site (app lives at the repo root).
+# Takes precedence over the old Gatsby build settings in the Netlify UI.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Astro 7 requires Node >= 22.12; pin the major for reproducible builds.
+  NODE_VERSION = "22"
