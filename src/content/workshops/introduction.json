@@ -1,0 +1,11 @@
+{
+  "cmsId": "cjw25qv0qgnf90941ms9cjb28",
+  "name": "Opanuj w końcu Gita - warsztaty od podstaw",
+  "slug": "introduction",
+  "description": {
+    "html": "<p>GIT jest obecnie najpopularniejszym systemem kontroli wersji na świecie (posiadającym około 90% rynku) 📈. Służy do zapisywania, kontrolowania, porządkowania oraz ewentualnego przywracania zmian w plikach projektów nad którymi pracujemy. Prawie każdy z nas, programistów 👨💻👩💻, wykorzystuje go w codziennej pracy. Polecenia takie jak commit, status, push, pull czy też branch nie będą już dla nas tajemnicą.</p><p></p><p>Umiesz posługiwać się wierszem poleceń? Wiesz co to GIT i chcesz go w końcu opanować, aby móc używać go w codziennej pracy lub nauce? Przyjdź na bezpłatne warsztaty od podstaw, podczas których nauczysz się jak skonfigurować GITa oraz jak wykorzystywać jego podstawowe funkcjonalności w codziennej pracy.</p>",
+    "markdown": "GIT jest obecnie najpopularniejszym systemem kontroli wersji na świecie (posiadającym około 90% rynku) 📈. Służy do zapisywania, kontrolowania, porządkowania oraz ewentualnego przywracania zmian w plikach projektów nad którymi pracujemy. Prawie każdy z nas, programistów 👨💻👩💻, wykorzystuje go w codziennej pracy. Polecenia takie jak commit, status, push, pull czy też branch nie będą już dla nas tajemnicą.\n\n\n\nUmiesz posługiwać się wierszem poleceń? Wiesz co to GIT i chcesz go w końcu opanować, aby móc używać go w codziennej pracy lub nauce? Przyjdź na bezpłatne warsztaty od podstaw, podczas których nauczysz się jak skonfigurować GITa oraz jak wykorzystywać jego podstawowe funkcjonalności w codziennej pracy.\n"
+  },
+  "materials": "https://content.gitguts.io/introduction/",
+  "prework": "https://content.gitguts.io/introduction-prework/"
+}

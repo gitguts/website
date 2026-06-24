@@ -1,0 +1,16 @@
+{
+  "cmsId": "ck91658wg4igx0b20ncq7cx4g",
+  "startTime": "2020-04-14T16:00:00+00:00",
+  "endTime": "2020-04-14T18:00:00+00:00",
+  "participants": 277,
+  "facebook": "https://www.facebook.com/events/2888374344579709/",
+  "evenea": "https://app.evenea.pl/event/webinar-git-guts/",
+  "address": {
+    "name": "Webinar",
+    "country": "Poland",
+    "city": "",
+    "street": "",
+    "zipCode": null
+  },
+  "workshop": "repository"
+}

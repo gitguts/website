@@ -1,0 +1,16 @@
+{
+  "cmsId": "ck1qnx0yqvktg0b49hnplndq0",
+  "startTime": "2019-11-06T16:30:00+00:00",
+  "endTime": "2019-11-06T20:30:00+00:00",
+  "participants": 67,
+  "facebook": "https://www.facebook.com/events/975081276187757",
+  "evenea": "https://evenea.pl/event/gdansk-warsztaty-git-zaawansowane2/",
+  "address": {
+    "name": "O4 Coworking, Olivia Four, Olivia Business Center",
+    "country": "Poland",
+    "city": "Gdańsk",
+    "street": "Al. Grunwaldzka 472B",
+    "zipCode": "80-309"
+  },
+  "workshop": "repository"
+}

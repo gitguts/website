@@ -1,0 +1,16 @@
+{
+  "cmsId": "cjw24zfchglha0910xl6o8s5f",
+  "startTime": "2019-04-05T15:30:00+00:00",
+  "endTime": "2019-04-05T19:30:00+00:00",
+  "participants": 50,
+  "facebook": "https://www.facebook.com/events/282580399305708/",
+  "evenea": null,
+  "address": {
+    "name": null,
+    "country": "Poland",
+    "city": "Kraków",
+    "street": "Aleja Kijowska 14",
+    "zipCode": "30-079"
+  },
+  "workshop": "repository"
+}

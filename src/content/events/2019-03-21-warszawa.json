@@ -1,0 +1,16 @@
+{
+  "cmsId": "cjw24wt03ghb20941290v2mnn",
+  "startTime": "2019-03-21T16:30:00+00:00",
+  "endTime": "2019-03-21T20:30:00+00:00",
+  "participants": 45,
+  "facebook": "https://www.facebook.com/events/857025891305333/",
+  "evenea": null,
+  "address": {
+    "name": null,
+    "country": "Poland",
+    "city": "Warszawa",
+    "street": "Plac Trzech Krzyży 10/14",
+    "zipCode": "00-499"
+  },
+  "workshop": "introduction"
+}

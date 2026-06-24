@@ -1,0 +1,16 @@
+{
+  "cmsId": "ck3733xmjko9b0b7342odmb4p",
+  "startTime": "2019-12-04T16:30:00+00:00",
+  "endTime": "2019-12-04T20:30:00+00:00",
+  "participants": null,
+  "facebook": "https://www.facebook.com/events/3048971721994737/",
+  "evenea": "https://evenea.pl/event/warszawa-gitguts/",
+  "address": {
+    "name": "Google for Startups Campus",
+    "country": "Poland",
+    "city": "Warszawa",
+    "street": "Plac Konesera 10",
+    "zipCode": "03-736"
+  },
+  "workshop": "repository"
+}
