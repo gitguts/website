@@ -1,0 +1,268 @@
+{
+  "data": {
+    "workshops": [
+      {
+        "id": "cjw25qv0qgnf90941ms9cjb28",
+        "createdAt": "2019-05-24T14:05:36.266+00:00",
+        "updatedAt": "2019-05-24T14:09:47.486+00:00",
+        "stage": "DRAFT",
+        "name": "Opanuj w końcu Gita - warsztaty od podstaw",
+        "slug": "introduction",
+        "description": {
+          "html": "<p>GIT jest obecnie najpopularniejszym systemem kontroli wersji na świecie (posiadającym około 90% rynku) 📈. Służy do zapisywania, kontrolowania, porządkowania oraz ewentualnego przywracania zmian w plikach projektów nad którymi pracujemy. Prawie każdy z nas, programistów 👨💻👩💻, wykorzystuje go w codziennej pracy. Polecenia takie jak commit, status, push, pull czy też branch nie będą już dla nas tajemnicą.</p><p></p><p>Umiesz posługiwać się wierszem poleceń? Wiesz co to GIT i chcesz go w końcu opanować, aby móc używać go w codziennej pracy lub nauce? Przyjdź na bezpłatne warsztaty od podstaw, podczas których nauczysz się jak skonfigurować GITa oraz jak wykorzystywać jego podstawowe funkcjonalności w codziennej pracy.</p>",
+          "markdown": "GIT jest obecnie najpopularniejszym systemem kontroli wersji na świecie (posiadającym około 90% rynku) 📈. Służy do zapisywania, kontrolowania, porządkowania oraz ewentualnego przywracania zmian w plikach projektów nad którymi pracujemy. Prawie każdy z nas, programistów 👨💻👩💻, wykorzystuje go w codziennej pracy. Polecenia takie jak commit, status, push, pull czy też branch nie będą już dla nas tajemnicą.\n\n\n\nUmiesz posługiwać się wierszem poleceń? Wiesz co to GIT i chcesz go w końcu opanować, aby móc używać go w codziennej pracy lub nauce? Przyjdź na bezpłatne warsztaty od podstaw, podczas których nauczysz się jak skonfigurować GITa oraz jak wykorzystywać jego podstawowe funkcjonalności w codziennej pracy.\n",
+          "text": "GIT jest obecnie najpopularniejszym systemem kontroli wersji na świecie (posiadającym około 90% rynku) 📈. Służy do zapisywania, kontrolowania, porządkowania oraz ewentualnego przywracania zmian w plikach projektów nad którymi pracujemy. Prawie każdy z nas, programistów 👨💻👩💻, wykorzystuje go w codziennej pracy. Polecenia takie jak commit, status, push, pull czy też branch nie będą już dla nas tajemnicą.\\n\\nUmiesz posługiwać się wierszem poleceń? Wiesz co to GIT i chcesz go w końcu opanować, aby móc używać go w codziennej pracy lub nauce? Przyjdź na bezpłatne warsztaty od podstaw, podczas których nauczysz się jak skonfigurować GITa oraz jak wykorzystywać jego podstawowe funkcjonalności w codziennej pracy."
+        },
+        "materials": "https://content.gitguts.io/introduction/",
+        "prework": "https://content.gitguts.io/introduction-prework/"
+      },
+      {
+        "id": "cjw25s6pq2xym0819xknt3iij",
+        "createdAt": "2019-05-24T14:06:38.078+00:00",
+        "updatedAt": "2019-11-18T12:11:50.896+00:00",
+        "stage": "DRAFT",
+        "name": "Zbuduj repozytorium git od zera!",
+        "slug": "repository",
+        "description": {
+          "html": "<p>Masz już kilkumiesięczne doświadczenie z GITem? Używasz go na codzień i czujesz się w nim komfortowo? Zastanawiałeś się kiedyś co znajduje się w magicznym katalogu .git ale bałeś się tam zaglądać żeby niczego nie zepsuć? Nurtuje Cię pytanie dlaczego GIT jest taki szybki i chciałbyś poznać jego wewnętrzne mechanizmy?</p><p>Jeśli te i więcej pytań trapią Cię od jakiegoś czasu lub jesteś zwyczajnie ciekawy co dzieje się wewnątrz gita i możesz powiedzieć o sobie, że jesteś zaawansowanym programistą - ten warsztat jest właśnie dla Ciebie! W trakcie warsztatu przejdziemy następujące etapy:</p><ul><li><div>stworzymy od zera strukturę katalogu .git,</div></li><li><div>odtworzymy commit od zera - od bloba, przez zapis struktury drzewiastej aż do samego obiektu commitu,</div></li><li><div>stworzymy branche i tagi i zrozumiemy, dlaczego w git jest to tak szybkie,</div></li><li><div>poznamy zasady działania Dziennika Zdarzeń (Reflog).</div></li></ul><p>Wszystkie z powyższych rzeczy zrobimy z użyciem edytora tekstu i wiersza poleceń, bez użycia klienta git! Dzięki wiedzy zdobytej w trakcie warsztatów rozwiązywanie nawet skomplikowanych problemów i sytuacji w repozytorium stanie się dla Ciebie znacznie prostsze!</p>",
+          "markdown": "Masz już kilkumiesięczne doświadczenie z GITem? Używasz go na codzień i czujesz się w nim komfortowo? Zastanawiałeś się kiedyś co znajduje się w magicznym katalogu .git ale bałeś się tam zaglądać żeby niczego nie zepsuć? Nurtuje Cię pytanie dlaczego GIT jest taki szybki i chciałbyś poznać jego wewnętrzne mechanizmy?\n\nJeśli te i więcej pytań trapią Cię od jakiegoś czasu lub jesteś zwyczajnie ciekawy co dzieje się wewnątrz gita i możesz powiedzieć o sobie, że jesteś zaawansowanym programistą - ten warsztat jest właśnie dla Ciebie! W trakcie warsztatu przejdziemy następujące etapy:\n\n-   stworzymy od zera strukturę katalogu .git,\n-   odtworzymy commit od zera - od bloba, przez zapis struktury drzewiastej aż do samego obiektu commitu,\n-   stworzymy branche i tagi i zrozumiemy, dlaczego w git jest to tak szybkie,\n-   poznamy zasady działania Dziennika Zdarzeń (Reflog).\n\nWszystkie z powyższych rzeczy zrobimy z użyciem edytora tekstu i wiersza poleceń, bez użycia klienta git! Dzięki wiedzy zdobytej w trakcie warsztatów rozwiązywanie nawet skomplikowanych problemów i sytuacji w repozytorium stanie się dla Ciebie znacznie prostsze!\n",
+          "text": "Masz już kilkumiesięczne doświadczenie z GITem? Używasz go na codzień i czujesz się w nim komfortowo? Zastanawiałeś się kiedyś co znajduje się w magicznym katalogu .git ale bałeś się tam zaglądać żeby niczego nie zepsuć? Nurtuje Cię pytanie dlaczego GIT jest taki szybki i chciałbyś poznać jego wewnętrzne mechanizmy?\\nJeśli te i więcej pytań trapią Cię od jakiegoś czasu lub jesteś zwyczajnie ciekawy co dzieje się wewnątrz gita i możesz powiedzieć o sobie, że jesteś zaawansowanym programistą - ten warsztat jest właśnie dla Ciebie! W trakcie warsztatu przejdziemy następujące etapy:\\nstworzymy od zera strukturę katalogu .git,\\nodtworzymy commit od zera - od bloba, przez zapis struktury drzewiastej aż do samego obiektu commitu,\\nstworzymy branche i tagi i zrozumiemy, dlaczego w git jest to tak szybkie,\\npoznamy zasady działania Dziennika Zdarzeń (Reflog).\\nWszystkie z powyższych rzeczy zrobimy z użyciem edytora tekstu i wiersza poleceń, bez użycia klienta git! Dzięki wiedzy zdobytej w trakcie warsztatów rozwiązywanie nawet skomplikowanych problemów i sytuacji w repozytorium stanie się dla Ciebie znacznie prostsze!"
+        },
+        "materials": "https://content.gitguts.io/repository/",
+        "prework": "https://content.gitguts.io/repository-prework/"
+      }
+    ],
+    "events": [
+      {
+        "id": "ck91658wg4igx0b20ncq7cx4g",
+        "createdAt": "2020-04-15T10:05:11.632+00:00",
+        "updatedAt": "2020-04-15T10:05:11.632+00:00",
+        "stage": "DRAFT",
+        "startTime": "2020-04-14T16:00:00+00:00",
+        "endTime": "2020-04-14T18:00:00+00:00",
+        "participants": 277,
+        "facebook": "https://www.facebook.com/events/2888374344579709/",
+        "evenea": "https://app.evenea.pl/event/webinar-git-guts/",
+        "address": {
+          "name": "Webinar",
+          "country": "Poland",
+          "city": "",
+          "street": "",
+          "zipCode": null
+        },
+        "workshop": {
+          "id": "cjw25s6pq2xym0819xknt3iij",
+          "name": "Zbuduj repozytorium git od zera!",
+          "slug": "repository"
+        }
+      },
+      {
+        "id": "ck3733xmjko9b0b7342odmb4p",
+        "createdAt": "2019-11-20T09:28:34.555+00:00",
+        "updatedAt": "2019-11-20T09:28:34.555+00:00",
+        "stage": "DRAFT",
+        "startTime": "2019-12-04T16:30:00+00:00",
+        "endTime": "2019-12-04T20:30:00+00:00",
+        "participants": null,
+        "facebook": "https://www.facebook.com/events/3048971721994737/",
+        "evenea": "https://evenea.pl/event/warszawa-gitguts/",
+        "address": {
+          "name": "Google for Startups Campus",
+          "country": "Poland",
+          "city": "Warszawa",
+          "street": "Plac Konesera 10",
+          "zipCode": "03-736"
+        },
+        "workshop": {
+          "id": "cjw25s6pq2xym0819xknt3iij",
+          "name": "Zbuduj repozytorium git od zera!",
+          "slug": "repository"
+        }
+      },
+      {
+        "id": "ck1qnx0yqvktg0b49hnplndq0",
+        "createdAt": "2019-10-14T16:59:16.898+00:00",
+        "updatedAt": "2019-11-07T10:10:12.376+00:00",
+        "stage": "DRAFT",
+        "startTime": "2019-11-06T16:30:00+00:00",
+        "endTime": "2019-11-06T20:30:00+00:00",
+        "participants": 67,
+        "facebook": "https://www.facebook.com/events/975081276187757",
+        "evenea": "https://evenea.pl/event/gdansk-warsztaty-git-zaawansowane2/",
+        "address": {
+          "name": "O4 Coworking, Olivia Four, Olivia Business Center",
+          "country": "Poland",
+          "city": "Gdańsk",
+          "street": "Al. Grunwaldzka 472B",
+          "zipCode": "80-309"
+        },
+        "workshop": {
+          "id": "cjw25s6pq2xym0819xknt3iij",
+          "name": "Zbuduj repozytorium git od zera!",
+          "slug": "repository"
+        }
+      },
+      {
+        "id": "cjw24zfchglha0910xl6o8s5f",
+        "createdAt": "2019-05-24T13:44:16.241+00:00",
+        "updatedAt": "2019-07-09T12:35:43.166+00:00",
+        "stage": "DRAFT",
+        "startTime": "2019-04-05T15:30:00+00:00",
+        "endTime": "2019-04-05T19:30:00+00:00",
+        "participants": 50,
+        "facebook": "https://www.facebook.com/events/282580399305708/",
+        "evenea": null,
+        "address": {
+          "name": null,
+          "country": "Poland",
+          "city": "Kraków",
+          "street": "Aleja Kijowska 14",
+          "zipCode": "30-079"
+        },
+        "workshop": {
+          "id": "cjw25s6pq2xym0819xknt3iij",
+          "name": "Zbuduj repozytorium git od zera!",
+          "slug": "repository"
+        }
+      },
+      {
+        "id": "cjw24yq9rglcd0910o78z6fw7",
+        "createdAt": "2019-05-24T13:43:43.743+00:00",
+        "updatedAt": "2019-07-09T12:35:33.639+00:00",
+        "stage": "DRAFT",
+        "startTime": "2019-04-04T15:30:00+00:00",
+        "endTime": "2019-04-04T19:30:00+00:00",
+        "participants": 78,
+        "facebook": "https://www.facebook.com/events/2268839090058689/",
+        "evenea": null,
+        "address": {
+          "name": null,
+          "country": "Poland",
+          "city": "Kraków",
+          "street": "Aleja Kijowska 14",
+          "zipCode": "30-079"
+        },
+        "workshop": {
+          "id": "cjw25qv0qgnf90941ms9cjb28",
+          "name": "Opanuj w końcu Gita - warsztaty od podstaw",
+          "slug": "introduction"
+        }
+      },
+      {
+        "id": "cjw24wt03ghb20941290v2mnn",
+        "createdAt": "2019-05-24T13:42:13.971+00:00",
+        "updatedAt": "2019-07-09T12:34:48.003+00:00",
+        "stage": "DRAFT",
+        "startTime": "2019-03-21T16:30:00+00:00",
+        "endTime": "2019-03-21T20:30:00+00:00",
+        "participants": 45,
+        "facebook": "https://www.facebook.com/events/857025891305333/",
+        "evenea": null,
+        "address": {
+          "name": null,
+          "country": "Poland",
+          "city": "Warszawa",
+          "street": "Plac Trzech Krzyży 10/14",
+          "zipCode": "00-499"
+        },
+        "workshop": {
+          "id": "cjw25qv0qgnf90941ms9cjb28",
+          "name": "Opanuj w końcu Gita - warsztaty od podstaw",
+          "slug": "introduction"
+        }
+      },
+      {
+        "id": "cjw24v1ejgkn40910i59k44g5",
+        "createdAt": "2019-05-24T13:40:51.547+00:00",
+        "updatedAt": "2019-07-09T14:08:09.861+00:00",
+        "stage": "DRAFT",
+        "startTime": "2019-01-26T09:00:00+00:00",
+        "endTime": "2019-01-26T13:30:00+00:00",
+        "participants": 49,
+        "facebook": "https://www.facebook.com/events/2240748036203534/",
+        "evenea": null,
+        "address": {
+          "name": "",
+          "country": "Poland",
+          "city": "Lublin",
+          "street": "Józefa Franczaka \"Lalka\" 43",
+          "zipCode": "20-325"
+        },
+        "workshop": {
+          "id": "cjw25s6pq2xym0819xknt3iij",
+          "name": "Zbuduj repozytorium git od zera!",
+          "slug": "repository"
+        }
+      },
+      {
+        "id": "cjw24smttgk1f09107hvzcj5h",
+        "createdAt": "2019-05-24T13:38:59.345+00:00",
+        "updatedAt": "2019-07-09T14:08:01.046+00:00",
+        "stage": "DRAFT",
+        "startTime": "2019-01-25T16:30:00+00:00",
+        "endTime": "2019-01-25T19:30:00+00:00",
+        "participants": 54,
+        "facebook": "https://www.facebook.com/events/372382150213054/",
+        "evenea": null,
+        "address": {
+          "name": "",
+          "country": "Poland",
+          "city": "Lublin",
+          "street": "Józefa Franczaka \"Lalka\" 43",
+          "zipCode": "20-325"
+        },
+        "workshop": {
+          "id": "cjw25qv0qgnf90941ms9cjb28",
+          "name": "Opanuj w końcu Gita - warsztaty od podstaw",
+          "slug": "introduction"
+        }
+      },
+      {
+        "id": "cjw24qc5o2osu0819wb5p4ius",
+        "createdAt": "2019-05-24T13:37:12.204+00:00",
+        "updatedAt": "2019-07-09T14:07:56.64+00:00",
+        "stage": "DRAFT",
+        "startTime": "2018-10-19T15:15:00+00:00",
+        "endTime": "2018-10-19T18:15:00+00:00",
+        "participants": 8,
+        "facebook": "https://www.facebook.com/events/929171027280478/",
+        "evenea": null,
+        "address": {
+          "name": "O4 Coworking, Olivia Four, Olivia Business Center",
+          "country": "Poland",
+          "city": "Gdańsk",
+          "street": "Al. Grunwaldzka 472B",
+          "zipCode": "80-309"
+        },
+        "workshop": {
+          "id": "cjw25s6pq2xym0819xknt3iij",
+          "name": "Zbuduj repozytorium git od zera!",
+          "slug": "repository"
+        }
+      },
+      {
+        "id": "cjw24mnuo2nur0819z6aruavp",
+        "createdAt": "2019-05-24T13:34:20.736+00:00",
+        "updatedAt": "2019-07-09T14:07:51.35+00:00",
+        "stage": "DRAFT",
+        "startTime": "2018-10-12T15:15:00+00:00",
+        "endTime": "2018-10-12T18:15:00+00:00",
+        "participants": 16,
+        "facebook": "https://www.facebook.com/events/929171027280478/",
+        "evenea": null,
+        "address": {
+          "name": "O4 Coworking, Olivia Four, Olivia Business Center",
+          "country": "Poland",
+          "city": "Gdańsk",
+          "street": "Al. Grunwaldzka 472B",
+          "zipCode": "80-309"
+        },
+        "workshop": {
+          "id": "cjw25s6pq2xym0819xknt3iij",
+          "name": "Zbuduj repozytorium git od zera!",
+          "slug": "repository"
+        }
+      }
+    ]
+  }
+}
