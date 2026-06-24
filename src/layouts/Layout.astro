@@ -130,22 +130,56 @@ const orgJsonLd = {
           });
         }
 
-        // newsletter (client-side only — real wiring is the contact/forms task)
+        // newsletter → MailerLite embedded-form endpoint (public, JSONP; no server/secret)
         var sub = document.getElementById("subscribe"),
           email = document.getElementById("email"),
           ok = document.getElementById("ok");
         if (sub && email) {
+          var ML =
+            "https://assets.mailerlite.com/jsonp/2468961/forms/191188705177764961/subscribe";
+          var busy = false;
           var subscribe = function () {
-            var valid = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim());
-            if (!valid) {
+            if (busy) return;
+            var value = email.value.trim();
+            if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(value)) {
               email.focus();
               email.style.borderColor = "#F0502E";
               return;
             }
             email.style.borderColor = "";
-            if (ok) ok.classList.add("show");
-            email.value = "";
-            email.placeholder = "zapisano ✓";
+            busy = true;
+            var label = sub.innerHTML;
+            sub.disabled = true;
+            sub.innerHTML = "Zapisywanie…";
+
+            var cb = "mlcb_" + Date.now();
+            var script = document.createElement("script");
+            var timer;
+            var done = function (success) {
+              clearTimeout(timer);
+              try { delete window[cb]; } catch (e) { window[cb] = undefined; }
+              if (script.parentNode) script.parentNode.removeChild(script);
+              busy = false;
+              sub.disabled = false;
+              sub.innerHTML = label;
+              if (success) {
+                email.value = "";
+                email.placeholder = "zapisano ✓";
+                if (ok) ok.classList.add("show");
+              } else {
+                email.style.borderColor = "#F0502E";
+              }
+            };
+            // MailerLite calls our callback with the response; errors arrive as { errors: … }
+            window[cb] = function (res) { done(!!res && !res.errors); };
+            script.onerror = function () { done(false); };
+            timer = setTimeout(function () { done(false); }, 10000);
+            script.src =
+              ML +
+              "?callback=" + cb +
+              "&fields%5Bemail%5D=" + encodeURIComponent(value) +
+              "&ml-submit=1&anticsrf=true&_=" + Date.now();
+            document.body.appendChild(script);
           };
           sub.addEventListener("click", subscribe);
           email.addEventListener("keydown", function (e) {
