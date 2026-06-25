@@ -258,3 +258,21 @@
     .ecard__links{grid-column:2;margin-top:4px}
   }
 
+  /* ---------- LEGAL PAGES ---------- */
+  .legal{max-width:760px;margin-inline:auto;padding:48px 0 72px}
+  .legal__back{font-family:"JetBrains Mono",monospace;font-size:.84rem;color:var(--purple);display:inline-block;margin-bottom:28px}
+  .legal__back:hover{text-decoration:underline}
+  .legal h1{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-.03em;line-height:1.1}
+  .legal__meta{color:var(--muted);font-size:.84rem;margin-top:10px}
+  .legal__body{margin-top:32px}
+  .legal__body h2{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.3rem;letter-spacing:-.02em;margin:34px 0 12px}
+  .legal__body h3{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.05rem;margin:22px 0 8px;color:var(--purple)}
+  .legal__body p{color:var(--ink);margin:0 0 14px;line-height:1.7}
+  .legal__body ul{margin:0 0 16px;padding-left:22px;display:grid;gap:8px}
+  .legal__body li{color:var(--ink);line-height:1.6}
+  .legal__body a{color:var(--purple);text-decoration:underline;word-break:break-word}
+  .legal__body hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+  .legal__body blockquote{border-left:3px solid var(--orange);background:var(--panel);padding:14px 18px;border-radius:8px;color:var(--muted);margin:0 0 16px}
+  .legal__body blockquote a{color:var(--purple)}
+  .legal__body strong{color:var(--ink)}
+

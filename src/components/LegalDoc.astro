@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from "astro:content";
+import { getLang, copy, homeUrl } from "../i18n/ui";
+import Layout from "../layouts/Layout.astro";
+
+interface Props {
+  doc: string; // e.g. "privacy" → matches legal entry by { doc, lang }
+}
+
+const { doc } = Astro.props;
+const lang = getLang(Astro);
+const t = copy[lang].legal;
+
+const entry = (await getCollection("legal")).find(
+  (e) => e.data.doc === doc && e.data.lang === lang
+);
+if (!entry) throw new Error(`Missing legal doc: ${doc} (${lang})`);
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} — Git Guts`}>
+  <article class="legal">
+    <a class="legal__back" href={`${homeUrl[lang]}#top`}>{t.back}</a>
+    <h1>{entry.data.title}</h1>
+    {entry.data.updated && <p class="legal__meta mono">{t.updated} {entry.data.updated}</p>}
+    <div class="legal__body">
+      <Content />
+    </div>
+  </article>
+</Layout>

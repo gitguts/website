@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import { getLang, copy, homeUrl, ogLocale } from "../i18n/ui";
+import { getLang, copy, ogLocale, localizedPaths } from "../i18n/ui";
 
 interface Props {
   title?: string;
@@ -15,12 +15,13 @@ const { title = t.seo.title, description = t.seo.description } = Astro.props;
 
 const siteName = "Git Guts";
 const origin = Astro.site!;
-const canonical = new URL(homeUrl[lang], origin).href;
+const paths = localizedPaths(Astro.url.pathname);
+const canonical = new URL(paths[lang], origin).href;
 const ogImage = new URL(lang === "en" ? "/og-en.png" : "/og.png", origin).href;
 const alternates = [
-  { hreflang: "pl", href: new URL("/", origin).href },
-  { hreflang: "en", href: new URL("/en/", origin).href },
-  { hreflang: "x-default", href: new URL("/", origin).href },
+  { hreflang: "pl", href: new URL(paths.pl, origin).href },
+  { hreflang: "en", href: new URL(paths.en, origin).href },
+  { hreflang: "x-default", href: new URL(paths.pl, origin).href },
 ];
 
 const orgJsonLd = {

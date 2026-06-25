@@ -15,6 +15,13 @@ export const homeUrl: Record<Lang, string> = { pl: "/", en: "/en/" };
 export const bcp47: Record<Lang, string> = { pl: "pl-PL", en: "en-GB" };
 export const ogLocale: Record<Lang, string> = { pl: "pl_PL", en: "en_US" };
 
+// Given the current path, return its PL and EN equivalents (works on any page,
+// so the language switcher and hreflang stay correct off the home page too).
+export function localizedPaths(pathname: string): Record<Lang, string> {
+  const stripped = pathname.replace(/^\/en(\/|$)/, "/");
+  return { pl: stripped, en: stripped === "/" ? "/en/" : "/en" + stripped };
+}
+
 // Polish has 3 plural forms; English 2.
 export function cityWord(lang: Lang, n: number): string {
   if (lang === "en") return n === 1 ? "city" : "cities";
@@ -123,6 +130,10 @@ export const copy = {
       cookies: "Polityka cookies",
       rights: "Wszystkie prawa zastrzeżone",
     },
+    legal: {
+      back: "← Strona główna",
+      updated: "Obowiązuje od",
+    },
   },
 
   en: {
@@ -222,6 +233,10 @@ export const copy = {
       terms: "Terms",
       cookies: "Cookie policy",
       rights: "All rights reserved",
+    },
+    legal: {
+      back: "← Home",
+      updated: "In effect from",
     },
   },
 } as const;

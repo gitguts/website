@@ -1,8 +1,9 @@
 ---
-import { getLang, copy } from "../i18n/ui";
+import { getLang, copy, homeUrl } from "../i18n/ui";
 
 const lang = getLang(Astro);
 const t = copy[lang];
+const home = homeUrl[lang];
 const year = new Date().getFullYear();
 ---
 
@@ -10,23 +11,23 @@ const year = new Date().getFullYear();
   <div class="wrap">
     <div class="foot">
       <div class="foot__about">
-        <a class="brand" href="#top"><span class="brand__dot"></span>git<b>guts</b></a>
+        <a class="brand" href={`${home}#top`}><span class="brand__dot"></span>git<b>guts</b></a>
         <p>{t.footer.about}</p>
       </div>
       <div>
         <h4>{t.footer.colSite}</h4>
         <ul>
-          <li><a href="#o-nas">{t.nav.about}</a></li>
-          <li><a href="#warsztaty">{t.nav.workshops}</a></li>
-          <li><a href="#wydarzenia">{t.nav.events}</a></li>
-          <li><a href="#kontrybutorzy">{t.nav.contributors}</a></li>
-          <li><a href="#dolacz">{t.footer.join}</a></li>
+          <li><a href={`${home}#o-nas`}>{t.nav.about}</a></li>
+          <li><a href={`${home}#warsztaty`}>{t.nav.workshops}</a></li>
+          <li><a href={`${home}#wydarzenia`}>{t.nav.events}</a></li>
+          <li><a href={`${home}#kontrybutorzy`}>{t.nav.contributors}</a></li>
+          <li><a href={`${home}#dolacz`}>{t.footer.join}</a></li>
         </ul>
       </div>
       <div>
         <h4>{t.footer.colDocs}</h4>
         <ul>
-          <li><a href="#">{t.footer.privacy}</a></li>
+          <li><a href={`${home}privacy-policy/`}>{t.footer.privacy}</a></li>
           <li><a href="#">{t.footer.terms}</a></li>
           <li><a href="#">{t.footer.cookies}</a></li>
         </ul>

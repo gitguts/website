@@ -47,4 +47,14 @@ const events = defineCollection({
   }),
 });
 
-export const collections = { workshops, events };
+const legal = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/legal" }),
+  schema: z.object({
+    doc: z.string(), // e.g. "privacy" | "terms" | "cookies"
+    lang: z.enum(["pl", "en"]),
+    title: z.string(),
+    updated: z.string().optional(),
+  }),
+});
+
+export const collections = { workshops, events, legal };
