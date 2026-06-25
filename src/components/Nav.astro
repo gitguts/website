@@ -1,20 +1,22 @@
 ---
-import { getLang, copy, homeUrl, localizedPaths, type Lang } from "../i18n/ui";
+import { getLang, copy, homeUrl, localizedPaths, type Lang } from '../i18n/ui';
 
 const lang = getLang(Astro);
 const t = copy[lang].nav;
 const home = homeUrl[lang];
 const alt = localizedPaths(Astro.url.pathname);
 
-const switcher: { code: Lang; label: string; href: string }[] = [
-  { code: "pl", label: "PL", href: alt.pl },
-  { code: "en", label: "EN", href: alt.en },
+const switcher: Array<{ code: Lang; label: string; href: string }> = [
+  { code: 'pl', label: 'PL', href: alt.pl },
+  { code: 'en', label: 'EN', href: alt.en },
 ];
 ---
 
 <header class="nav">
   <div class="wrap nav__row">
-    <a class="brand" href={`${home}#top`}><span class="brand__dot"></span>git<b>guts</b></a>
+    <a class="brand" href={`${home}#top`}
+      ><span class="brand__dot"></span>git<b>guts</b></a
+    >
     <nav class="nav__links">
       <a href={`${home}#o-nas`}>{t.about}</a>
       <a href={`${home}#warsztaty`}>{t.workshops}</a>
@@ -23,7 +25,11 @@ const switcher: { code: Lang; label: string; href: string }[] = [
       <span class="lang">
         {
           switcher.map((s) => (
-            <a class={s.code === lang ? "is-active" : ""} href={s.href} hreflang={s.code}>
+            <a
+              class={s.code === lang ? 'is-active' : ''}
+              href={s.href}
+              hreflang={s.code}
+            >
               {s.label}
             </a>
           ))
@@ -43,7 +49,11 @@ const switcher: { code: Lang; label: string; href: string }[] = [
     <span class="lang">
       {
         switcher.map((s) => (
-          <a class={s.code === lang ? "is-active" : ""} href={s.href} hreflang={s.code}>
+          <a
+            class={s.code === lang ? 'is-active' : ''}
+            href={s.href}
+            hreflang={s.code}
+          >
             {s.label}
           </a>
         ))
@@ -57,7 +67,7 @@ const switcher: { code: Lang; label: string; href: string }[] = [
       display: inline-flex;
       gap: 6px;
       align-items: center;
-      font-family: "JetBrains Mono", monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.82rem;
     }
     .lang a {

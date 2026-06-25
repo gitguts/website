@@ -5,8 +5,9 @@ Source repository for Git Guts initiative [website](https://www.gitguts.io).
 ## Requirements
 
 This project requires:
-* [Node.js](https://nodejs.org/en/) in 8.3.0 version (or higher)
-* [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/) globally installed
+
+- [Node.js](https://nodejs.org/en/) in 8.3.0 version (or higher)
+- [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/) globally installed
 
 ## Installation
 
@@ -31,8 +32,9 @@ npm run format
 ```
 
 But it's more convenient to have an IDE plugin that will format edited file on each save. Instructions how to setup Prettier in particular IDEs:
-* WebStorm - built in support ([setup instructions](https://prettier.io/docs/en/webstorm.html))
-* Visual Studio Code - via [prettier-vscode](https://github.com/prettier/prettier-vscode) plugin
+
+- WebStorm - built in support ([setup instructions](https://prettier.io/docs/en/webstorm.html))
+- Visual Studio Code - via [prettier-vscode](https://github.com/prettier/prettier-vscode) plugin
 
 ## License
 

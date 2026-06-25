@@ -1,5 +1,5 @@
 ---
-import { getLang, copy } from "../i18n/ui";
+import { getLang, copy } from '../i18n/ui';
 
 const lang = getLang(Astro);
 const t = copy[lang].about;
@@ -8,7 +8,9 @@ const t = copy[lang].about;
 <section class="commit" id="o-nas">
   <div class="commit__rail"><span class="commit__node"></span></div>
   <div class="commit__body">
-    <span class="eyebrow mono">commit · <span class="sha">{t.eyebrowSha}</span></span>
+    <span class="eyebrow mono"
+      >commit · <span class="sha">{t.eyebrowSha}</span></span
+    >
     <h2 class="title">{t.title}</h2>
     <p class="lead">{t.lead}</p>
     <div class="cards">

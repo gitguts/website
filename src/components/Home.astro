@@ -1,31 +1,34 @@
 ---
-import { getCollection } from "astro:content";
-import { getLang } from "../i18n/ui";
-import Layout from "../layouts/Layout.astro";
-import Hero from "./Hero.astro";
-import Stats from "./Stats.astro";
-import About from "./About.astro";
-import Workshops from "./Workshops.astro";
-import Events from "./Events.astro";
-import Organizers from "./Organizers.astro";
-import Newsletter from "./Newsletter.astro";
+import { getCollection } from 'astro:content';
+import { getLang } from '../i18n/ui';
+import Layout from '../layouts/Layout.astro';
+import Hero from './Hero.astro';
+import Stats from './Stats.astro';
+import About from './About.astro';
+import Workshops from './Workshops.astro';
+import Events from './Events.astro';
+import Organizers from './Organizers.astro';
+import Newsletter from './Newsletter.astro';
 
 const lang = getLang(Astro);
-const workshops = await getCollection("workshops");
-const events = await getCollection("events");
+const workshops = await getCollection('workshops');
+const events = await getCollection('events');
 
 // Stats derived from the events collection at build time.
-const participants = events.reduce((sum, e) => sum + (e.data.participants ?? 0), 0);
+const participants = events.reduce(
+  (sum, e) => sum + (e.data.participants ?? 0),
+  0,
+);
 const cities = [...new Set(events.map((e) => e.data.address.city))]
   .filter((c): c is string => Boolean(c))
-  .sort((a, b) => a.localeCompare(b, "pl"));
+  .sort((a, b) => a.localeCompare(b, 'pl'));
 
 // slug → workshop name in the active locale, for labelling events.
 const workshopName = Object.fromEntries(
   workshops.map((w) => [
     w.id,
-    lang === "en" && w.data.nameEn ? w.data.nameEn : w.data.name,
-  ])
+    lang === 'en' && w.data.nameEn ? w.data.nameEn : w.data.name,
+  ]),
 );
 ---
 

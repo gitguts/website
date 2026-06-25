@@ -1,5 +1,5 @@
 ---
-import { getLang, copy, cityWord } from "../i18n/ui";
+import { getLang, copy, cityWord } from '../i18n/ui';
 
 interface Props {
   participants: number;
@@ -14,11 +14,15 @@ const t = copy[lang].stats;
 <section class="commit" id="stats">
   <div class="commit__rail"><span class="commit__node"></span></div>
   <div class="commit__body">
-    <span class="eyebrow mono">git log --stat <span class="sha">{t.eyebrowSha}</span></span>
+    <span class="eyebrow mono"
+      >git log --stat <span class="sha">{t.eyebrowSha}</span></span
+    >
     <div class="stats">
       <div class="stat"><b>{participants}</b><span>{t.participants}</span></div>
       <div class="stat">
-        <b>{cities.length}</b><span>{cityWord(lang, cities.length)} {t.citiesSuffix}</span>
+        <b>{cities.length}</b><span
+          >{cityWord(lang, cities.length)} {t.citiesSuffix}</span
+        >
       </div>
       <div class="stat"><b>{t.free}</b><span>{t.freeLabel}</span></div>
     </div>

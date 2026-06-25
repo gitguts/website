@@ -1,5 +1,5 @@
 ---
-import { getLang, copy } from "../i18n/ui";
+import { getLang, copy } from '../i18n/ui';
 
 const lang = getLang(Astro);
 const t = copy[lang].hero;
@@ -8,12 +8,18 @@ const t = copy[lang].hero;
 <section class="commit commit--head in" id="hero">
   <div class="commit__rail"><span class="commit__node"></span></div>
   <div class="commit__body hero__body hero">
-    <span class="eyebrow mono">HEAD → main <span class="sha">{t.eyebrowSha}</span></span>
-    <h1 set:html={t.h1Html}></h1>
-    <p class="lead" set:html={t.leadHtml}></p>
+    <span class="eyebrow mono"
+      >HEAD → main <span class="sha">{t.eyebrowSha}</span></span
+    >
+    <h1 set:html={t.h1Html} />
+    <p class="lead" set:html={t.leadHtml} />
     <div class="cta-row">
-      <a class="btn btn--primary" href="#dolacz">{t.ctaPrimary} <span class="mono">→</span></a>
-      <a class="btn btn--ghost" href="#warsztaty">{t.ctaSecondary} <span class="mono">git log</span></a>
+      <a class="btn btn--primary" href="#dolacz"
+        >{t.ctaPrimary} <span class="mono">→</span></a
+      >
+      <a class="btn btn--ghost" href="#warsztaty"
+        >{t.ctaSecondary} <span class="mono">git log</span></a
+      >
     </div>
 
     <div class="graph" id="graph">
@@ -25,37 +31,181 @@ const t = copy[lang].hero;
         role="img"
         aria-label="Git graph: commit history and objects inside the .git directory"
       >
-        <path class="gpath g1" d="M70 60 L70 230" fill="none" stroke="#663399" stroke-width="2.5"></path>
-        <path class="gpath g3" d="M70 130 C104 145 150 150 150 182" fill="none" stroke="#F0502E" stroke-width="2.5"></path>
-        <path class="gpath g4" d="M150 182 C150 214 104 216 70 230" fill="none" stroke="#F0502E" stroke-width="2.5"></path>
+        <path
+          class="gpath g1"
+          d="M70 60 L70 230"
+          fill="none"
+          stroke="#663399"
+          stroke-width="2.5"></path>
+        <path
+          class="gpath g3"
+          d="M70 130 C104 145 150 150 150 182"
+          fill="none"
+          stroke="#F0502E"
+          stroke-width="2.5"></path>
+        <path
+          class="gpath g4"
+          d="M150 182 C150 214 104 216 70 230"
+          fill="none"
+          stroke="#F0502E"
+          stroke-width="2.5"></path>
 
-        <g class="gnode g1"><circle cx="70" cy="60" r="10" fill="#fff" stroke="#663399" stroke-width="3"></circle></g>
-        <g class="gnode g2"><circle cx="70" cy="130" r="10" fill="#fff" stroke="#663399" stroke-width="3"></circle></g>
-        <g class="gnode g3"><circle cx="150" cy="182" r="8.5" fill="#fff" stroke="#F0502E" stroke-width="3"></circle></g>
-        <g class="gnode g4"><circle cx="70" cy="230" r="10" fill="#663399"></circle></g>
+        <g class="gnode g1"
+          ><circle
+            cx="70"
+            cy="60"
+            r="10"
+            fill="#fff"
+            stroke="#663399"
+            stroke-width="3"></circle></g
+        >
+        <g class="gnode g2"
+          ><circle
+            cx="70"
+            cy="130"
+            r="10"
+            fill="#fff"
+            stroke="#663399"
+            stroke-width="3"></circle></g
+        >
+        <g class="gnode g3"
+          ><circle
+            cx="150"
+            cy="182"
+            r="8.5"
+            fill="#fff"
+            stroke="#F0502E"
+            stroke-width="3"></circle></g
+        >
+        <g class="gnode g4"
+          ><circle cx="70" cy="230" r="10" fill="#663399"></circle></g
+        >
 
-        <text class="gtext g1 mono" x="92" y="65" font-size="14" fill="#1C1530">{t.graph.basics}</text>
-        <text class="gtext g2 mono" x="92" y="135" font-size="14" fill="#1C1530">{t.graph.internals}</text>
-        <text class="gtext g3 mono" x="170" y="187" font-size="12.5" fill="#F0502E">{t.graph.branch}</text>
-        <text class="gtext g4 mono" x="92" y="235" font-size="14" fill="#1C1530">{t.graph.merge}</text>
+        <text class="gtext g1 mono" x="92" y="65" font-size="14" fill="#1C1530"
+          >{t.graph.basics}</text
+        >
+        <text class="gtext g2 mono" x="92" y="135" font-size="14" fill="#1C1530"
+          >{t.graph.internals}</text
+        >
+        <text
+          class="gtext g3 mono"
+          x="170"
+          y="187"
+          font-size="12.5"
+          fill="#F0502E">{t.graph.branch}</text
+        >
+        <text class="gtext g4 mono" x="92" y="235" font-size="14" fill="#1C1530"
+          >{t.graph.merge}</text
+        >
 
-        <line class="gtext g4" x1="40" y1="270" x2="680" y2="270" stroke="#E6DEF4" stroke-width="1.5" stroke-dasharray="4 5"></line>
+        <line
+          class="gtext g4"
+          x1="40"
+          y1="270"
+          x2="680"
+          y2="270"
+          stroke="#E6DEF4"
+          stroke-width="1.5"
+          stroke-dasharray="4 5"></line>
 
-        <text class="gtext g4 mono" x="40" y="300" font-size="12.5" fill="#6A6280">{t.graph.whatsIn}</text>
+        <text
+          class="gtext g4 mono"
+          x="40"
+          y="300"
+          font-size="12.5"
+          fill="#6A6280">{t.graph.whatsIn}</text
+        >
 
-        <path class="gpath g5" d="M76 330 L210 330" fill="none" stroke="#CDBEE8" stroke-width="2"></path>
-        <path class="gpath g6" d="M242 330 L350 312" fill="none" stroke="#CDBEE8" stroke-width="2"></path>
-        <path class="gpath g6" d="M242 330 L350 348" fill="none" stroke="#CDBEE8" stroke-width="2"></path>
+        <path
+          class="gpath g5"
+          d="M76 330 L210 330"
+          fill="none"
+          stroke="#CDBEE8"
+          stroke-width="2"></path>
+        <path
+          class="gpath g6"
+          d="M242 330 L350 312"
+          fill="none"
+          stroke="#CDBEE8"
+          stroke-width="2"></path>
+        <path
+          class="gpath g6"
+          d="M242 330 L350 348"
+          fill="none"
+          stroke="#CDBEE8"
+          stroke-width="2"></path>
 
-        <g class="gnode g5"><rect x="50" y="317" width="26" height="26" rx="6" fill="#F2ECFB" stroke="#663399" stroke-width="2.5"></rect></g>
-        <g class="gnode g5"><rect x="216" y="317" width="26" height="26" rx="6" fill="#fff" stroke="#663399" stroke-width="2.5"></rect></g>
-        <g class="gnode g6"><circle cx="362" cy="312" r="11" fill="#fff" stroke="#6A6280" stroke-width="2.5"></circle></g>
-        <g class="gnode g6"><circle cx="362" cy="348" r="11" fill="#fff" stroke="#6A6280" stroke-width="2.5"></circle></g>
+        <g class="gnode g5"
+          ><rect
+            x="50"
+            y="317"
+            width="26"
+            height="26"
+            rx="6"
+            fill="#F2ECFB"
+            stroke="#663399"
+            stroke-width="2.5"></rect></g
+        >
+        <g class="gnode g5"
+          ><rect
+            x="216"
+            y="317"
+            width="26"
+            height="26"
+            rx="6"
+            fill="#fff"
+            stroke="#663399"
+            stroke-width="2.5"></rect></g
+        >
+        <g class="gnode g6"
+          ><circle
+            cx="362"
+            cy="312"
+            r="11"
+            fill="#fff"
+            stroke="#6A6280"
+            stroke-width="2.5"></circle></g
+        >
+        <g class="gnode g6"
+          ><circle
+            cx="362"
+            cy="348"
+            r="11"
+            fill="#fff"
+            stroke="#6A6280"
+            stroke-width="2.5"></circle></g
+        >
 
-        <text class="gtext g5 mono" x="63" y="362" font-size="13" fill="#663399" text-anchor="middle">commit</text>
-        <text class="gtext g5 mono" x="229" y="362" font-size="13" fill="#663399" text-anchor="middle">tree</text>
-        <text class="gtext g6 mono" x="382" y="316" font-size="13" fill="#6A6280">blob</text>
-        <text class="gtext g6 mono" x="382" y="352" font-size="13" fill="#6A6280">blob</text>
+        <text
+          class="gtext g5 mono"
+          x="63"
+          y="362"
+          font-size="13"
+          fill="#663399"
+          text-anchor="middle">commit</text
+        >
+        <text
+          class="gtext g5 mono"
+          x="229"
+          y="362"
+          font-size="13"
+          fill="#663399"
+          text-anchor="middle">tree</text
+        >
+        <text
+          class="gtext g6 mono"
+          x="382"
+          y="316"
+          font-size="13"
+          fill="#6A6280">blob</text
+        >
+        <text
+          class="gtext g6 mono"
+          x="382"
+          y="352"
+          font-size="13"
+          fill="#6A6280">blob</text
+        >
       </svg>
     </div>
   </div>

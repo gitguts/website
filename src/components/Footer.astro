@@ -1,5 +1,5 @@
 ---
-import { getLang, copy, homeUrl } from "../i18n/ui";
+import { getLang, copy, homeUrl } from '../i18n/ui';
 
 const lang = getLang(Astro);
 const t = copy[lang];
@@ -11,7 +11,9 @@ const year = new Date().getFullYear();
   <div class="wrap">
     <div class="foot">
       <div class="foot__about">
-        <a class="brand" href={`${home}#top`}><span class="brand__dot"></span>git<b>guts</b></a>
+        <a class="brand" href={`${home}#top`}
+          ><span class="brand__dot"></span>git<b>guts</b></a
+        >
         <p>{t.footer.about}</p>
       </div>
       <div>

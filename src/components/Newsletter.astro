@@ -1,5 +1,5 @@
 ---
-import { getLang, copy } from "../i18n/ui";
+import { getLang, copy } from '../i18n/ui';
 
 const lang = getLang(Astro);
 const t = copy[lang].newsletter;
@@ -30,7 +30,8 @@ const t = copy[lang].newsletter;
         <input type="hidden" name="ml-submit" value="1" />
         <input type="hidden" name="anticsrf" value="true" />
         <button class="btn btn--primary" type="submit">
-          {t.submit} <span class="mono">↵</span>
+          {t.submit}
+          <span class="mono">↵</span>
         </button>
       </form>
       <!-- cross-origin POST target: keeps the page from navigating to MailerLite -->

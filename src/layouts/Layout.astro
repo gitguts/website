@@ -1,8 +1,8 @@
 ---
-import "../styles/global.css";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
-import { getLang, copy, ogLocale, localizedPaths } from "../i18n/ui";
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getLang, copy, ogLocale, localizedPaths } from '../i18n/ui';
 
 interface Props {
   title?: string;
@@ -13,23 +13,23 @@ const lang = getLang(Astro);
 const t = copy[lang];
 const { title = t.seo.title, description = t.seo.description } = Astro.props;
 
-const siteName = "Git Guts";
+const siteName = 'Git Guts';
 const origin = Astro.site!;
 const paths = localizedPaths(Astro.url.pathname);
 const canonical = new URL(paths[lang], origin).href;
-const ogImage = new URL(lang === "en" ? "/og-en.png" : "/og.png", origin).href;
+const ogImage = new URL(lang === 'en' ? '/og-en.png' : '/og.png', origin).href;
 const alternates = [
-  { hreflang: "pl", href: new URL(paths.pl, origin).href },
-  { hreflang: "en", href: new URL(paths.en, origin).href },
-  { hreflang: "x-default", href: new URL(paths.pl, origin).href },
+  { hreflang: 'pl', href: new URL(paths.pl, origin).href },
+  { hreflang: 'en', href: new URL(paths.en, origin).href },
+  { hreflang: 'x-default', href: new URL(paths.pl, origin).href },
 ];
 
 const orgJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
   name: siteName,
   url: origin.href,
-  logo: new URL("/logo.png", origin).href,
+  logo: new URL('/logo.png', origin).href,
   image: ogImage,
   description,
 };
@@ -43,21 +43,29 @@ const orgJsonLd = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#663399" />
-    <script is:inline>document.documentElement.className = "js";</script>
+    <script is:inline>
+      document.documentElement.className = 'js';
+    </script>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-54YWLKHC0R"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-54YWLKHC0R"
+    ></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
+
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "G-54YWLKHC0R");
+      gtag('js', new Date());
+      gtag('config', 'G-54YWLKHC0R');
     </script>
 
     <link rel="canonical" href={canonical} />
-    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    {
+      alternates.map((a) => (
+        <link rel="alternate" hreflang={a.hreflang} href={a.href} />
+      ))
+    }
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -96,55 +104,57 @@ const orgJsonLd = {
     <script is:inline>
       (function () {
         // mobile menu
-        var burger = document.getElementById("burger"),
-          menu = document.getElementById("menu");
+        const burger = document.getElementById('burger'),
+          menu = document.getElementById('menu');
         if (burger && menu) {
-          burger.addEventListener("click", function () {
-            var open = menu.classList.toggle("open");
-            burger.setAttribute("aria-expanded", open);
+          burger.addEventListener('click', function () {
+            const open = menu.classList.toggle('open');
+            burger.setAttribute('aria-expanded', open);
           });
-          menu.querySelectorAll("a").forEach(function (a) {
-            a.addEventListener("click", function () {
-              menu.classList.remove("open");
-              burger.setAttribute("aria-expanded", "false");
+          menu.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () {
+              menu.classList.remove('open');
+              burger.setAttribute('aria-expanded', 'false');
             });
           });
         }
 
         // commit spine reveal
-        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (!reduce && "IntersectionObserver" in window) {
-          var io = new IntersectionObserver(
+        const reduce = window.matchMedia(
+          '(prefers-reduced-motion: reduce)',
+        ).matches;
+        if (!reduce && 'IntersectionObserver' in window) {
+          const io = new IntersectionObserver(
             function (entries) {
               entries.forEach(function (e) {
                 if (e.isIntersecting) {
-                  e.target.classList.add("in");
+                  e.target.classList.add('in');
                   io.unobserve(e.target);
                 }
               });
             },
-            { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+            { threshold: 0.18, rootMargin: '0px 0px -8% 0px' },
           );
-          document.querySelectorAll(".commit:not(#hero)").forEach(function (s) {
+          document.querySelectorAll('.commit:not(#hero)').forEach(function (s) {
             io.observe(s);
           });
         } else {
-          document.querySelectorAll(".commit").forEach(function (s) {
-            s.classList.add("in");
+          document.querySelectorAll('.commit').forEach(function (s) {
+            s.classList.add('in');
           });
         }
 
         // hero graph draw-in
-        var graph = document.getElementById("graph");
+        const graph = document.getElementById('graph');
         if (graph) {
-          window.addEventListener("load", function () {
+          window.addEventListener('load', function () {
             if (reduce) {
-              graph.classList.add("loaded");
+              graph.classList.add('loaded');
               return;
             }
             requestAnimationFrame(function () {
               setTimeout(function () {
-                graph.classList.add("loaded");
+                graph.classList.add('loaded');
               }, 180);
             });
           });
@@ -152,15 +162,15 @@ const orgJsonLd = {
 
         // newsletter → MailerLite via a real cross-origin form POST to a hidden iframe.
         // (A fetch/JSONP request is blocked by the browser's ORB/CORS; a form submit is not.)
-        var nlForm = document.getElementById("newsletter-form"),
-          email = document.getElementById("email"),
-          ok = document.getElementById("ok");
+        const nlForm = document.getElementById('newsletter-form'),
+          email = document.getElementById('email'),
+          ok = document.getElementById('ok');
         if (nlForm && email) {
-          nlForm.addEventListener("submit", function () {
-            if (ok) ok.classList.add("show");
+          nlForm.addEventListener('submit', function () {
+            if (ok) ok.classList.add('show');
             setTimeout(function () {
-              email.value = "";
-              email.placeholder = "✓";
+              email.value = '';
+              email.placeholder = '✓';
             }, 50);
           });
         }
