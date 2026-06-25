@@ -1,4 +1,8 @@
 ---
+import { getLang, copy } from "../i18n/ui";
+
+const lang = getLang(Astro);
+const t = copy[lang].newsletter;
 ---
 
 <section class="commit commit--accent commit--tail" id="dolacz">
@@ -6,11 +10,8 @@
   <div class="commit__body">
     <div class="signup">
       <span class="eyebrow mono">git remote add origin</span>
-      <h2>Wracamy z nowymi materiałami i warsztatami.</h2>
-      <p>
-        Zostaw maila, a damy znać, gdy ruszą zapisy na kolejne edycje. Zero spamu
-        — tylko konkrety o warsztatach.
-      </p>
+      <h2>{t.h2}</h2>
+      <p>{t.p}</p>
       <form
         class="form"
         id="newsletter-form"
@@ -22,14 +23,14 @@
           type="email"
           id="email"
           name="fields[email]"
-          placeholder="twoj@email.dev"
-          aria-label="Adres e-mail"
+          placeholder={t.placeholder}
+          aria-label={t.emailLabel}
           required
         />
         <input type="hidden" name="ml-submit" value="1" />
         <input type="hidden" name="anticsrf" value="true" />
         <button class="btn btn--primary" type="submit">
-          Zapisz się <span class="mono">↵</span>
+          {t.submit} <span class="mono">↵</span>
         </button>
       </form>
       <!-- cross-origin POST target: keeps the page from navigating to MailerLite -->
@@ -39,9 +40,7 @@
         aria-hidden="true"
         tabindex="-1"
         style="display:none"></iframe>
-      <p class="form__ok mono" id="ok">
-        ✓ Prawie gotowe — sprawdź skrzynkę i potwierdź zapis.
-      </p>
+      <p class="form__ok mono" id="ok">{t.success}</p>
     </div>
   </div>
 </section>

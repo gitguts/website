@@ -1,17 +1,19 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { getLang, copy } from "../i18n/ui";
 
 interface Props {
   workshops: CollectionEntry<"workshops">[];
 }
 
 const { workshops } = Astro.props;
+const lang = getLang(Astro);
+const t = copy[lang].workshops;
 
-// Display order + badge/accent, keyed by slug (basics first, internals second).
 const order: Record<string, number> = { introduction: 0, repository: 1 };
 const meta: Record<string, { badge: string; cls: string; adv: boolean }> = {
-  introduction: { badge: "Podstawy", cls: "badge--basic", adv: false },
-  repository: { badge: "Zaawansowany", cls: "badge--adv", adv: true },
+  introduction: { badge: t.badgeBasic, cls: "badge--basic", adv: false },
+  repository: { badge: t.badgeAdvanced, cls: "badge--adv", adv: true },
 };
 
 const sorted = [...workshops].sort(
@@ -22,28 +24,28 @@ const sorted = [...workshops].sort(
 <section class="commit commit--accent" id="warsztaty">
   <div class="commit__rail"><span class="commit__node"></span></div>
   <div class="commit__body">
-    <span class="eyebrow mono">branch · <span class="sha">warsztaty</span></span>
-    <h2 class="title">
-      Dwa warsztaty. Od pierwszego commita po wnętrze <span
-        class="mono"
-        style="color:var(--orange)">.git</span
-      >.
-    </h2>
+    <span class="eyebrow mono">branch · <span class="sha">{t.eyebrowSha}</span></span>
+    <h2 class="title" set:html={t.titleHtml}></h2>
     <div class="wshops">
       {
         sorted.map((w) => {
           const m = meta[w.data.slug] ?? {
-            badge: "Warsztat",
+            badge: t.badgeBasic,
             cls: "badge--basic",
             adv: false,
           };
+          const name = lang === "en" && w.data.nameEn ? w.data.nameEn : w.data.name;
+          const descHtml =
+            lang === "en" && w.data.descriptionEn
+              ? w.data.descriptionEn.html
+              : w.data.description.html;
           return (
             <article class={m.adv ? "wcard wcard--adv" : "wcard"}>
               <div class="wcard__head">
-                <h3>{w.data.name}</h3>
+                <h3>{name}</h3>
                 <span class={`badge ${m.cls}`}>{m.badge}</span>
               </div>
-              <div class="wcard__desc" set:html={w.data.description.html} />
+              <div class="wcard__desc" set:html={descHtml} />
               <div class="res">
                 {w.data.materials && (
                   <a href={w.data.materials} target="_blank" rel="noopener">
@@ -51,7 +53,7 @@ const sorted = [...workshops].sort(
                       <path d="M3 2h7l3 3v9H3z" />
                       <path d="M10 2v3h3" />
                     </svg>
-                    Materiały
+                    {t.materials}
                   </a>
                 )}
                 {w.data.prework && (
@@ -59,7 +61,7 @@ const sorted = [...workshops].sort(
                     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
                       <path d="M2 8h12M9 3l5 5-5 5" />
                     </svg>
-                    Prework
+                    {t.prework}
                   </a>
                 )}
               </div>

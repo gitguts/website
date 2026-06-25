@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { getLang, copy, bcp47 } from "../i18n/ui";
 
 interface Props {
   events: CollectionEntry<"events">[];
@@ -7,14 +8,17 @@ interface Props {
 }
 
 const { events, workshopName } = Astro.props;
+const lang = getLang(Astro);
+const t = copy[lang].events;
+const loc = bcp47[lang];
 
 const sorted = [...events].sort(
   (a, b) => b.data.startTime.getTime() - a.data.startTime.getTime()
 );
 
-const dayFmt = new Intl.DateTimeFormat("pl-PL", { day: "numeric", timeZone: "UTC" });
-const monFmt = new Intl.DateTimeFormat("pl-PL", { month: "short", timeZone: "UTC" });
-const timeFmt = new Intl.DateTimeFormat("pl-PL", {
+const dayFmt = new Intl.DateTimeFormat(loc, { day: "numeric", timeZone: "UTC" });
+const monFmt = new Intl.DateTimeFormat(loc, { month: "short", timeZone: "UTC" });
+const timeFmt = new Intl.DateTimeFormat(loc, {
   hour: "2-digit",
   minute: "2-digit",
   hour12: false,
@@ -23,7 +27,7 @@ const timeFmt = new Intl.DateTimeFormat("pl-PL", {
 
 type Address = CollectionEntry<"events">["data"]["address"];
 function place(a: Address): string {
-  if (!a.street) return a.name || "Webinar";
+  if (!a.street) return a.name || t.webinar;
   const line2 = [a.zipCode, a.city].filter(Boolean).join(" ");
   return [a.street, line2].filter(Boolean).join(", ");
 }
@@ -32,11 +36,9 @@ function place(a: Address): string {
 <section class="commit" id="wydarzenia">
   <div class="commit__rail"><span class="commit__node"></span></div>
   <div class="commit__body">
-    <span class="eyebrow mono">git log --oneline <span class="sha">· wydarzenia</span></span>
-    <h2 class="title">Cztery lata warsztatów na żywo.</h2>
-    <p class="lead">
-      Warsztaty, które poprowadziliśmy w miastach w całej Polsce — i online.
-    </p>
+    <span class="eyebrow mono">git log --oneline <span class="sha">{t.eyebrowSha}</span></span>
+    <h2 class="title">{t.title}</h2>
+    <p class="lead">{t.lead}</p>
     <div class="events">
       {
         sorted.map((e) => {
@@ -48,13 +50,13 @@ function place(a: Address): string {
                 {monFmt.format(d.startTime).replace(".", "")} {d.startTime.getUTCFullYear()}
               </div>
               <div class="ecard__main">
-                <h3>{workshopName[d.workshop.id] ?? "Warsztat git"}</h3>
+                <h3>{workshopName[d.workshop.id] ?? ""}</h3>
                 <div class="ecard__meta">
                   <span class="mono">
                     {timeFmt.format(d.startTime)}–{timeFmt.format(d.endTime)}
                   </span>
                   <span>{place(d.address)}</span>
-                  {d.participants ? <span>{d.participants} uczestników</span> : null}
+                  {d.participants ? <span>{d.participants} {t.participants}</span> : null}
                 </div>
               </div>
               <div class="ecard__links">

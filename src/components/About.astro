@@ -1,40 +1,26 @@
 ---
+import { getLang, copy } from "../i18n/ui";
+
+const lang = getLang(Astro);
+const t = copy[lang].about;
 ---
 
 <section class="commit" id="o-nas">
   <div class="commit__rail"><span class="commit__node"></span></div>
   <div class="commit__body">
-    <span class="eyebrow mono">commit · <span class="sha">o nas</span></span>
-    <h2 class="title">Entuzjaści gita, którzy lubią się dzielić.</h2>
-    <p class="lead">
-      Jesteśmy inicjatywą edukującą programistów na każdym poziomie w zakresie
-      najpopularniejszego systemu kontroli wersji na świecie.
-    </p>
+    <span class="eyebrow mono">commit · <span class="sha">{t.eyebrowSha}</span></span>
+    <h2 class="title">{t.title}</h2>
+    <p class="lead">{t.lead}</p>
     <div class="cards">
-      <div class="vcard">
-        <div class="k">// kim jesteśmy</div>
-        <h3>Ewangeliści dobrych praktyk</h3>
-        <p>
-          Entuzjaści zakochani w gicie i w dobrych praktykach pracy z kodem.
-          Dzielenie się wiedzą to dla nas frajda.
-        </p>
-      </div>
-      <div class="vcard">
-        <div class="k">// co robimy</div>
-        <h3>Uczymy efektywnej pracy</h3>
-        <p>
-          Pokazujemy jak skutecznie korzystać z gita i jak poprawnie organizować
-          proces wytwarzania oprogramowania.
-        </p>
-      </div>
-      <div class="vcard">
-        <div class="k">// czemu to robimy</div>
-        <h3>Bo git jest super :)</h3>
-        <p>
-          Bo zarówno dzielenie się wiedzą, jak i sam git, są po prostu super. To
-          wystarczający powód.
-        </p>
-      </div>
+      {
+        t.cards.map((c) => (
+          <div class="vcard">
+            <div class="k">{c.k}</div>
+            <h3>{c.h}</h3>
+            <p>{c.p}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

@@ -1,20 +1,19 @@
 ---
+import { getLang, copy } from "../i18n/ui";
+
+const lang = getLang(Astro);
+const t = copy[lang].contributors;
 ---
 
 <section class="commit" id="kontrybutorzy">
   <div class="commit__rail"><span class="commit__node"></span></div>
   <div class="commit__body">
-    <span class="eyebrow mono">git blame · <span class="sha">kontrybutorzy</span></span>
-    <h2 class="title">Kontrybutorzy</h2>
-    <p class="lead">Kto stoi za Git Guts.</p>
+    <span class="eyebrow mono">git blame · <span class="sha">{t.eyebrowSha}</span></span>
+    <h2 class="title">{t.title}</h2>
+    <p class="lead">{t.lead}</p>
     <div class="pcard">
-      <h3><span class="glyph">ŁR</span>Łukasz Rybka</h3>
-      <p>
-        Piszę kod, wykładam na uczelni i występuję na konferencjach na całym
-        świecie. Pasjonują mnie systemy rozproszone, developer experience i
-        rzemiosło uczenia — a Git Guts prowadzę po godzinach, żeby pokazywać
-        gita od podszewki.
-      </p>
+      <h3><span class="glyph">ŁR</span>{t.name}</h3>
+      <p>{t.bio}</p>
       <div class="plinks">
         <a href="https://www.dragonia.org.pl" target="_blank" rel="noopener">dragonia.org.pl</a>
       </div>

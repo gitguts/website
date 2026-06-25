@@ -10,12 +10,18 @@ const workshops = defineCollection({
   schema: z.object({
     cmsId: z.string().optional(),
     name: z.string(),
+    nameEn: z.string().optional(),
     slug: z.string(),
     description: z.object({
       html: z.string(),
       markdown: z.string().optional(),
       text: z.string().optional(),
     }),
+    descriptionEn: z
+      .object({
+        html: z.string(),
+      })
+      .optional(),
     materials: z.string().url().optional(),
     prework: z.string().url().optional(),
   }),

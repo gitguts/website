@@ -1,14 +1,32 @@
 ---
+import { getLang, copy, type Lang } from "../i18n/ui";
+
+const lang = getLang(Astro);
+const t = copy[lang].nav;
+
+const switcher: { code: Lang; label: string; href: string }[] = [
+  { code: "pl", label: "PL", href: "/" },
+  { code: "en", label: "EN", href: "/en/" },
+];
 ---
 
 <header class="nav">
   <div class="wrap nav__row">
     <a class="brand" href="#top"><span class="brand__dot"></span>git<b>guts</b></a>
     <nav class="nav__links">
-      <a href="#o-nas">O nas</a>
-      <a href="#warsztaty">Warsztaty</a>
-      <a href="#wydarzenia">Wydarzenia</a>
-      <a href="#kontrybutorzy">Kontrybutorzy</a>
+      <a href="#o-nas">{t.about}</a>
+      <a href="#warsztaty">{t.workshops}</a>
+      <a href="#wydarzenia">{t.events}</a>
+      <a href="#kontrybutorzy">{t.contributors}</a>
+      <span class="lang">
+        {
+          switcher.map((s) => (
+            <a class={s.code === lang ? "is-active" : ""} href={s.href} hreflang={s.code}>
+              {s.label}
+            </a>
+          ))
+        }
+      </span>
       <a class="nav__cta mono" href="#dolacz">git pull&nbsp;↓</a>
     </nav>
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"
@@ -16,10 +34,48 @@
     >
   </div>
   <nav class="nav__menu" id="menu">
-    <a href="#o-nas">O nas</a>
-    <a href="#warsztaty">Warsztaty</a>
-    <a href="#wydarzenia">Wydarzenia</a>
-    <a href="#kontrybutorzy">Kontrybutorzy</a>
+    <a href="#o-nas">{t.about}</a>
+    <a href="#warsztaty">{t.workshops}</a>
+    <a href="#wydarzenia">{t.events}</a>
+    <a href="#kontrybutorzy">{t.contributors}</a>
+    <span class="lang">
+      {
+        switcher.map((s) => (
+          <a class={s.code === lang ? "is-active" : ""} href={s.href} hreflang={s.code}>
+            {s.label}
+          </a>
+        ))
+      }
+    </span>
     <a class="nav__cta mono" href="#dolacz">git pull&nbsp;↓</a>
   </nav>
+
+  <style>
+    .lang {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.82rem;
+    }
+    .lang a {
+      color: var(--muted);
+      padding: 2px 5px;
+      border-radius: 6px;
+      transition: color 0.15s;
+    }
+    .lang a:hover {
+      color: var(--ink);
+    }
+    .lang a.is-active {
+      color: var(--purple);
+      font-weight: 700;
+    }
+    @media (max-width: 680px) {
+      .nav__menu .lang {
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+  </style>
 </header>

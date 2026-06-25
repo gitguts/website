@@ -2,46 +2,55 @@
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import { getLang, copy, homeUrl, ogLocale } from "../i18n/ui";
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const {
-  title = "Git Guts — bezpłatne warsztaty z gita",
-  description = "Bezpłatne warsztaty, które uczą nie tylko jak używać gita, ale też jak działa w środku.",
-} = Astro.props;
+const lang = getLang(Astro);
+const t = copy[lang];
+const { title = t.seo.title, description = t.seo.description } = Astro.props;
 
 const siteName = "Git Guts";
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
-const ogImage = new URL("/og.png", Astro.site).href;
+const origin = Astro.site!;
+const canonical = new URL(homeUrl[lang], origin).href;
+const ogImage = new URL(lang === "en" ? "/og-en.png" : "/og.png", origin).href;
+const alternates = [
+  { hreflang: "pl", href: new URL("/", origin).href },
+  { hreflang: "en", href: new URL("/en/", origin).href },
+  { hreflang: "x-default", href: new URL("/", origin).href },
+];
 
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: siteName,
-  url: Astro.site!.href,
-  logo: new URL("/logo.png", Astro.site).href,
+  url: origin.href,
+  logo: new URL("/logo.png", origin).href,
   image: ogImage,
   description,
 };
 ---
 
 <!doctype html>
-<html lang="pl">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#663399" />
+    <script is:inline>document.documentElement.className = "js";</script>
+
     <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:locale" content={ogLocale[lang]} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -57,7 +66,6 @@ const orgJsonLd = {
 
     <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
 
-    <script is:inline>document.documentElement.className = "js";</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -132,18 +140,15 @@ const orgJsonLd = {
 
         // newsletter → MailerLite via a real cross-origin form POST to a hidden iframe.
         // (A fetch/JSONP request is blocked by the browser's ORB/CORS; a form submit is not.)
-        // Native validation (type=email + required) gates invalid input; double opt-in is the
-        // real confirmation, so we show optimistic success once a valid form actually posts.
         var nlForm = document.getElementById("newsletter-form"),
           email = document.getElementById("email"),
           ok = document.getElementById("ok");
         if (nlForm && email) {
           nlForm.addEventListener("submit", function () {
             if (ok) ok.classList.add("show");
-            // clear after the browser has serialized + sent the POST (async, not in-handler)
             setTimeout(function () {
               email.value = "";
-              email.placeholder = "zapisano ✓";
+              email.placeholder = "✓";
             }, 50);
           });
         }

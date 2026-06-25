@@ -1,22 +1,19 @@
 ---
+import { getLang, copy } from "../i18n/ui";
+
+const lang = getLang(Astro);
+const t = copy[lang].hero;
 ---
 
 <section class="commit commit--head in" id="hero">
   <div class="commit__rail"><span class="commit__node"></span></div>
   <div class="commit__body hero__body hero">
-    <span class="eyebrow mono">HEAD → main <span class="sha">· a1b2c3d</span></span>
-    <h1>Poznaj gita <em>od podszewki</em>.</h1>
-    <p class="lead">
-      Bezpłatne warsztaty, które uczą nie tylko jak <span class="mono">commit</span
-      >ować, ale też jak git działa w środku — blob po blobie, drzewo po drzewie.
-    </p>
+    <span class="eyebrow mono">HEAD → main <span class="sha">{t.eyebrowSha}</span></span>
+    <h1 set:html={t.h1Html}></h1>
+    <p class="lead" set:html={t.leadHtml}></p>
     <div class="cta-row">
-      <a class="btn btn--primary" href="#dolacz"
-        >Zapisz się na warsztaty <span class="mono">→</span></a
-      >
-      <a class="btn btn--ghost" href="#warsztaty"
-        >Zobacz program <span class="mono">git log</span></a
-      >
+      <a class="btn btn--primary" href="#dolacz">{t.ctaPrimary} <span class="mono">→</span></a>
+      <a class="btn btn--ghost" href="#warsztaty">{t.ctaSecondary} <span class="mono">git log</span></a>
     </div>
 
     <div class="graph" id="graph">
@@ -26,9 +23,8 @@
       <svg
         viewBox="0 0 720 374"
         role="img"
-        aria-label="Graf gita: historia commitów oraz obiekty w katalogu .git"
+        aria-label="Git graph: commit history and objects inside the .git directory"
       >
-        <!-- ===== BAND 1: commit history ===== -->
         <path class="gpath g1" d="M70 60 L70 230" fill="none" stroke="#663399" stroke-width="2.5"></path>
         <path class="gpath g3" d="M70 130 C104 145 150 150 150 182" fill="none" stroke="#F0502E" stroke-width="2.5"></path>
         <path class="gpath g4" d="M150 182 C150 214 104 216 70 230" fill="none" stroke="#F0502E" stroke-width="2.5"></path>
@@ -38,15 +34,14 @@
         <g class="gnode g3"><circle cx="150" cy="182" r="8.5" fill="#fff" stroke="#F0502E" stroke-width="3"></circle></g>
         <g class="gnode g4"><circle cx="70" cy="230" r="10" fill="#663399"></circle></g>
 
-        <text class="gtext g1 mono" x="92" y="65" font-size="14" fill="#1C1530">feat: od podstaw</text>
-        <text class="gtext g2 mono" x="92" y="135" font-size="14" fill="#1C1530">feat: wnętrzności .git</text>
-        <text class="gtext g3 mono" x="170" y="187" font-size="12.5" fill="#F0502E">branch</text>
-        <text class="gtext g4 mono" x="92" y="235" font-size="14" fill="#1C1530">merge: społeczność dev</text>
+        <text class="gtext g1 mono" x="92" y="65" font-size="14" fill="#1C1530">{t.graph.basics}</text>
+        <text class="gtext g2 mono" x="92" y="135" font-size="14" fill="#1C1530">{t.graph.internals}</text>
+        <text class="gtext g3 mono" x="170" y="187" font-size="12.5" fill="#F0502E">{t.graph.branch}</text>
+        <text class="gtext g4 mono" x="92" y="235" font-size="14" fill="#1C1530">{t.graph.merge}</text>
 
         <line class="gtext g4" x1="40" y1="270" x2="680" y2="270" stroke="#E6DEF4" stroke-width="1.5" stroke-dasharray="4 5"></line>
 
-        <!-- ===== BAND 2: anatomy of .git ===== -->
-        <text class="gtext g4 mono" x="40" y="300" font-size="12.5" fill="#6A6280">// co siedzi w .git</text>
+        <text class="gtext g4 mono" x="40" y="300" font-size="12.5" fill="#6A6280">{t.graph.whatsIn}</text>
 
         <path class="gpath g5" d="M76 330 L210 330" fill="none" stroke="#CDBEE8" stroke-width="2"></path>
         <path class="gpath g6" d="M242 330 L350 312" fill="none" stroke="#CDBEE8" stroke-width="2"></path>

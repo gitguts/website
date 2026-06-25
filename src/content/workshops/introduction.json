@@ -1,7 +1,11 @@
 {
   "cmsId": "cjw25qv0qgnf90941ms9cjb28",
   "name": "Opanuj w końcu Gita - warsztaty od podstaw",
+  "nameEn": "Master git at last — a workshop from scratch",
   "slug": "introduction",
+  "descriptionEn": {
+    "html": "<p>Git is today the most popular version control system in the world (with roughly 90% of the market) 📈. It's used to save, track, organize and — when needed — restore changes in the files of the projects we work on. Almost every one of us developers 👨💻👩💻 uses it every day. Commands like commit, status, push, pull or branch will stop being a mystery.</p><p></p><p>Comfortable with the command line? Know what git is and want to finally master it for everyday work or study? Come to this free from-scratch workshop, where you'll learn how to configure git and how to use its core features day to day.</p>"
+  },
   "description": {
     "html": "<p>GIT jest obecnie najpopularniejszym systemem kontroli wersji na świecie (posiadającym około 90% rynku) 📈. Służy do zapisywania, kontrolowania, porządkowania oraz ewentualnego przywracania zmian w plikach projektów nad którymi pracujemy. Prawie każdy z nas, programistów 👨💻👩💻, wykorzystuje go w codziennej pracy. Polecenia takie jak commit, status, push, pull czy też branch nie będą już dla nas tajemnicą.</p><p></p><p>Umiesz posługiwać się wierszem poleceń? Wiesz co to GIT i chcesz go w końcu opanować, aby móc używać go w codziennej pracy lub nauce? Przyjdź na bezpłatne warsztaty od podstaw, podczas których nauczysz się jak skonfigurować GITa oraz jak wykorzystywać jego podstawowe funkcjonalności w codziennej pracy.</p>",
     "markdown": "GIT jest obecnie najpopularniejszym systemem kontroli wersji na świecie (posiadającym około 90% rynku) 📈. Służy do zapisywania, kontrolowania, porządkowania oraz ewentualnego przywracania zmian w plikach projektów nad którymi pracujemy. Prawie każdy z nas, programistów 👨💻👩💻, wykorzystuje go w codziennej pracy. Polecenia takie jak commit, status, push, pull czy też branch nie będą już dla nas tajemnicą.\n\n\n\nUmiesz posługiwać się wierszem poleceń? Wiesz co to GIT i chcesz go w końcu opanować, aby móc używać go w codziennej pracy lub nauce? Przyjdź na bezpłatne warsztaty od podstaw, podczas których nauczysz się jak skonfigurować GITa oraz jak wykorzystywać jego podstawowe funkcjonalności w codziennej pracy.\n"

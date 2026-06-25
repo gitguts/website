@@ -1,33 +1,5 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Stats from "../components/Stats.astro";
-import About from "../components/About.astro";
-import Workshops from "../components/Workshops.astro";
-import Events from "../components/Events.astro";
-import Organizers from "../components/Organizers.astro";
-import Newsletter from "../components/Newsletter.astro";
-
-const workshops = await getCollection("workshops");
-const events = await getCollection("events");
-
-// Stats derived from the events collection at build time.
-const participants = events.reduce((sum, e) => sum + (e.data.participants ?? 0), 0);
-const cities = [...new Set(events.map((e) => e.data.address.city))]
-  .filter((c): c is string => Boolean(c))
-  .sort((a, b) => a.localeCompare(b, "pl"));
-
-// slug → workshop name, for labelling events.
-const workshopName = Object.fromEntries(workshops.map((w) => [w.id, w.data.name]));
+import Home from "../components/Home.astro";
 ---
 
-<Layout>
-  <Hero />
-  <Stats participants={participants} cities={cities} />
-  <About />
-  <Workshops workshops={workshops} />
-  <Events events={events} workshopName={workshopName} />
-  <Organizers />
-  <Newsletter />
-</Layout>
+<Home />
