@@ -45,6 +45,17 @@ const orgJsonLd = {
     <meta name="theme-color" content="#663399" />
     <script is:inline>document.documentElement.className = "js";</script>
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-54YWLKHC0R"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-54YWLKHC0R");
+    </script>
+
     <link rel="canonical" href={canonical} />
     {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
 
